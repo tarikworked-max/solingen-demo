@@ -7,10 +7,10 @@
 <meta name="description" content="Türköz: kaba yapıdan ince işçiliğe tüm inşaat malzemelerinin yurt içi toptan satışı ve yurt dışı ihracatı. Teklif isteyin.">
 <style>
 :root{
-  --ink:#16191e;--ink2:#22262d;--steel:#5b6470;--line:#e2e5ea;
+  --ink:#16191e;--ink2:#22262d;--line:#e2e5ea;
   --bg:#f5f6f8;--card:#ffffff;--tx:#16191e;--mut:#5b6470;
   --acc:#f2b705;--acc2:#d99e00;--accTx:#8a6500;--dark:#16191e;
-  --radius:12px;
+  --radius:14px;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -24,143 +24,273 @@
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img,svg{display:block;max-width:100%}
+svg{display:block;max-width:100%}
 button,input,select,textarea{font:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
 h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
 h1{font-size:clamp(34px,6vw,64px);font-weight:800}
 h2{font-size:clamp(26px,4vw,40px);font-weight:800}
 h3{font-size:18px;font-weight:700}
-section{padding:72px 0}
+section{padding:80px 0;position:relative}
 .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accTx);margin-bottom:12px}
 .lead{color:var(--mut);max-width:640px;margin-top:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:8px;font-weight:700;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
 .btn-acc{background:var(--acc);color:#16191e}.btn-acc:hover{background:var(--acc2)}
 .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}.btn-ghost:hover{border-color:var(--acc);color:var(--acc)}
-.btn-line{border-color:var(--line);background:var(--card);color:var(--tx)}.btn-line:hover{border-color:var(--acc)}
 svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
-/* HEADER */
-header{position:sticky;top:0;z-index:50;background:var(--dark);color:#fff;border-bottom:1px solid #000}
+/* ---------- HEADER ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-filter:blur(8px);color:#fff;border-bottom:1px solid #000}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800}
-.logo-mark{width:36px;height:36px;border-radius:8px;background:var(--acc);color:#16191e;display:grid;place-items:center;font-size:18px;font-weight:900}
+.logo-mark{width:38px;height:38px;border-radius:9px;background:var(--acc);color:#16191e;display:grid;place-items:center;font-size:18px;font-weight:900;transition:transform .4s}
+.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.06)}
 .logo b{font-size:20px;letter-spacing:.12em;display:block;line-height:1}
 .logo small{font-size:10px;letter-spacing:.3em;color:var(--acc);font-weight:700}
 .menu{display:flex;gap:26px;font-size:14px;font-weight:600}
-.menu a{opacity:.85}.menu a:hover{opacity:1;color:var(--acc)}
+.menu a{opacity:.85;position:relative}
+.menu a:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--acc);transition:width .25s}
+.menu a:hover{opacity:1;color:var(--acc)}.menu a:hover:after{width:100%}
 .nav-cta{display:flex;align-items:center;gap:12px}
+.nav-cta .btn{padding:10px 18px;font-size:14px}
 .burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}
 .drawer{display:none}
 
-/* HERO */
-.hero{position:relative;background:var(--dark);color:#fff;padding:104px 0 96px;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(242,183,5,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(242,183,5,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,#000 30%,transparent 95%)}
-.hero .wrap{position:relative}
+/* ---------- HERO ---------- */
+.hero{position:relative;background:var(--dark);color:#fff;padding:72px 0 0;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(242,183,5,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(242,183,5,.07) 1px,transparent 1px);background-size:56px 56px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
 .hero .eyebrow{color:var(--acc)}
 .hero h1 span{color:var(--acc)}
-.hero p{font-size:18px;color:#c9d0da;max-width:620px;margin:20px 0 32px}
+.hero p{font-size:18px;color:#c9d0da;max-width:560px;margin:20px 0 32px}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:48px}
-.hero-tags span{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px;font-size:13px;color:#dfe5ec}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.hero-tags span{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px;font-size:13px;color:#dfe5ec;background:rgba(255,255,255,.03)}
+.scene{width:100%;height:auto}
+.scene .blk{transform-box:fill-box;transform-origin:50% 100%;animation:rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
+.scene .hook{animation:hook 5s ease-in-out infinite}
+.scene .truck{animation:drive 11s linear infinite}
+.scene .sun{animation:pulse 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes rise{from{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:1}}
+@keyframes hook{0%,100%{transform:translateY(0)}50%{transform:translateY(70px)}}
+@keyframes drive{from{transform:translateX(-60px)}to{transform:translateX(640px)}}
+@keyframes pulse{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.5;transform:scale(1.15)}}
 
-/* PRODUCTS */
-.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:32px 0 22px}
+/* ---------- MARQUEE ---------- */
+.marq{background:var(--acc);color:#16191e;overflow:hidden;white-space:nowrap;padding:14px 0;margin-top:72px;position:relative;z-index:1}
+.marq-track{display:inline-flex;gap:40px;animation:marq 28s linear infinite;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+.marq-track span:after{content:"✦";margin-left:40px;opacity:.6}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- PRODUCTS ---------- */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:32px 0 24px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}
-.chip.on,.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.search{position:relative;min-width:240px}
-.search input{width:100%;padding:11px 14px 11px 40px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--tx)}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.chip.on,.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+.search{position:relative;min-width:260px}
+.search input{width:100%;padding:12px 14px 12px 42px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--tx)}
 .search input:focus{outline:2px solid var(--acc);outline-offset:1px}
-.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;transition:.2s}
-.card:hover{transform:translateY(-2px);border-color:var(--acc)}
-.card .cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accTx)}
-.card h3{font-size:16px}
-.card .meta{font-size:13px;color:var(--mut)}
-.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line)}
-.card .sku{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
-.card button{background:none;border:0;color:var(--accTx);font-weight:700;font-size:14px;cursor:pointer;padding:0}
-.card button:hover{text-decoration:underline}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(0,0,0,.45);border-color:var(--acc)}
+.pic{height:150px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--c) 18%,transparent),transparent 70%),var(--bg);position:relative;overflow:hidden}
+.pic svg{width:96px;height:96px;color:var(--c);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover .pic svg{transform:scale(1.12) rotate(-3deg)}
+.pic .tag{position:absolute;left:12px;top:12px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--accTx)}
+.body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:16px}
+.body .meta{font-size:13px;color:var(--mut)}
+.body .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line)}
+.body .sku{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.body button{background:none;border:0;color:var(--accTx);font-weight:800;font-size:14px;cursor:pointer;padding:0}
+.body button:hover{text-decoration:underline}
 .empty{display:none;color:var(--mut);padding:40px 0;text-align:center}
-.note{font-size:13px;color:var(--mut);margin-top:20px}
+.note{font-size:13px;color:var(--mut);margin-top:22px}
 
-/* SERVICES */
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-.svc .ic{width:46px;height:46px;border-radius:10px;background:var(--acc);color:#16191e;display:grid;place-items:center;margin-bottom:16px}
+/* ---------- PROCESS ---------- */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.steps:before{content:"";position:absolute;top:44px;left:12%;right:12%;height:3px;background:linear-gradient(90deg,var(--acc) var(--p,0%),var(--line) var(--p,0%));border-radius:3px;transition:--p 1.4s}
+.step{position:relative;text-align:center;padding:0 10px}
+.step .dot{width:88px;height:88px;margin:0 auto 18px;border-radius:50%;background:var(--card);border:3px solid var(--acc);display:grid;place-items:center;position:relative;z-index:1;color:var(--accTx)}
+.step .dot svg{width:40px;height:40px}
+.step .n{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center}
+.step p{color:var(--mut);font-size:14px;margin-top:6px}
+
+/* ---------- SERVICES ---------- */
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:36px}
+.svc{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;overflow:hidden;transition:.3s}
+.svc:after{content:"";position:absolute;right:-30px;bottom:-30px;width:120px;height:120px;border-radius:50%;background:var(--acc);opacity:.12;transition:transform .5s}
+.svc:hover{transform:translateY(-4px);border-color:var(--acc)}
+.svc:hover:after{transform:scale(2.2)}
+.svc .ic{width:52px;height:52px;border-radius:12px;background:var(--acc);color:#16191e;display:grid;place-items:center;margin-bottom:16px}
 .svc p{color:var(--mut);font-size:14px;margin-top:8px}
 
-/* EXPORT */
-.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+/* ---------- EXPORT ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .checks{list-style:none;display:grid;gap:14px;margin-top:24px}
 .checks li{display:flex;gap:12px;align-items:flex-start}
 .checks svg{color:var(--accTx);margin-top:2px}
-.markets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.market{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--bg);font-weight:700;font-size:14px;text-align:center}
-.market small{display:block;font-weight:500;color:var(--mut);font-size:12px;margin-top:2px}
-.terms{margin-top:20px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.terms div{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-size:14px}
+.route{width:100%;background:var(--dark);border-radius:var(--radius);padding:10px}
+.route text{fill:#dfe5ec;font-size:13px;font-weight:600}
+.route .path{fill:none;stroke:var(--acc);stroke-width:2.2;stroke-dasharray:6 8;animation:dash 2.5s linear infinite}
+.route .ship{fill:var(--acc)}
+.route .hub{fill:var(--acc)}
+.route .ring{fill:none;stroke:var(--acc);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
+.route .dest{fill:#fff}
+@keyframes dash{to{stroke-dashoffset:-56}}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+.terms{margin-top:22px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.terms div{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:14px}
 .terms div:last-child{border-bottom:0}
-.terms b{color:var(--accTx)}
+.terms b{color:var(--accTx);text-align:right}
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
 .about-grid p{color:var(--mut);margin-top:16px}
-.pillars{display:grid;gap:14px}
-.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;border-left:4px solid var(--acc)}
-.pillar h3{margin-bottom:4px}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:.3s}
+.pillar:hover{transform:translateY(-4px);border-color:var(--acc)}
+.pillar .ico{width:44px;height:44px;border-radius:10px;background:color-mix(in srgb,var(--acc) 22%,transparent);color:var(--accTx);display:grid;place-items:center;margin-bottom:12px}
+.pillar h3{font-size:16px;margin-bottom:4px}
 .pillar p{font-size:14px;color:var(--mut)}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start}
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:start}
 .info{display:grid;gap:14px;margin-top:24px}
-.info div{display:flex;gap:14px;align-items:flex-start;color:var(--mut);font-size:15px}
+.info div{display:flex;gap:14px;align-items:flex-start;color:var(--mut);font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .info svg{color:var(--accTx);margin-top:2px}
 .info b{display:block;color:var(--tx)}
-form.rfq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form.rfq{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;box-shadow:0 30px 60px -40px rgba(0,0,0,.4)}
 form.rfq label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mut)}
 form.rfq .full{grid-column:1/-1}
-form.rfq input,form.rfq select,form.rfq textarea{padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--tx);width:100%}
+form.rfq input,form.rfq select,form.rfq textarea{padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--tx);width:100%}
 form.rfq textarea{min-height:110px;resize:vertical}
 form.rfq input:focus,form.rfq select:focus,form.rfq textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
 form.rfq input.bad{border-color:#d64545}
 form.rfq .btn{grid-column:1/-1;width:100%}
-.ok{display:none;grid-column:1/-1;background:#e7f6ec;color:#17652f;border-radius:8px;padding:12px 14px;font-size:14px;font-weight:600}
+.ok{display:none;grid-column:1/-1;background:#e7f6ec;color:#17652f;border-radius:9px;padding:12px 14px;font-size:14px;font-weight:600}
 .ok.show{display:block}
 
-/* FOOTER */
-footer{background:var(--dark);color:#aab3bf;padding:48px 0 28px;font-size:14px}
+/* ---------- FOOTER ---------- */
+footer{background:var(--dark);color:#aab3bf;padding:52px 0 28px;font-size:14px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
 footer h4{color:#fff;font-size:14px;margin-bottom:12px}
 footer ul{list-style:none;display:grid;gap:8px}
 footer a:hover{color:var(--acc)}
 .copy{margin-top:36px;padding-top:20px;border-top:1px solid #222831;font-size:12px;color:#7c8694}
 
-/* RESPONSIVE */
+/* ---------- REVEAL ---------- */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width:900px){
   .menu,.nav-cta .btn{display:none}
   .burger{display:block}
   .drawer.open{display:grid;gap:4px;padding:8px 16px 16px;border-top:1px solid #222831;background:var(--dark)}
-  .drawer{display:none}
-  .drawer a{padding:12px 4px;border-bottom:1px solid #222831;font-weight:600}
-  .split,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .drawer a{padding:12px 4px;border-bottom:1px solid #222831;font-weight:600;color:#fff}
+  .hero-grid,.split,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .steps{grid-template-columns:1fr 1fr;gap:34px 18px}
+  .steps:before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-grid > div:first-child{grid-column:1/-1}
 }
 @media (max-width:600px){
   section{padding:56px 0}
-  .hero{padding:72px 0 64px}
+  .hero{padding-top:48px}
   form.rfq{grid-template-columns:1fr;padding:20px}
-  .markets{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
   .search{min-width:0;width:100%}
   .foot-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
+
+<!-- Ürün ikonları (sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-bag" viewBox="0 0 64 64">
+      <path d="M16 12h32l4 8v38a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V20z" fill="currentColor"/>
+      <path d="M16 12h32l4 8H12z" fill="#fff" opacity=".35"/>
+      <rect x="20" y="30" width="24" height="14" rx="3" fill="#fff" opacity=".9"/>
+      <text x="32" y="41" text-anchor="middle" font-size="9" font-weight="800" fill="#16191e" font-family="system-ui,sans-serif">CEM</text>
+    </symbol>
+    <symbol id="i-rebar" viewBox="0 0 64 64">
+      <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+        <line x1="6" y1="18" x2="58" y2="18"/><line x1="6" y1="30" x2="58" y2="30"/><line x1="6" y1="42" x2="58" y2="42"/><line x1="6" y1="54" x2="58" y2="54"/>
+      </g>
+      <g fill="#fff" opacity=".5"><rect x="6" y="16" width="52" height="1.5"/><rect x="6" y="28" width="52" height="1.5"/><rect x="6" y="40" width="52" height="1.5"/><rect x="6" y="52" width="52" height="1.5"/></g>
+    </symbol>
+    <symbol id="i-block" viewBox="0 0 64 64">
+      <rect x="4" y="16" width="56" height="34" rx="3" fill="currentColor"/>
+      <g fill="#fff" opacity=".55"><rect x="12" y="24" width="8" height="8" rx="1"/><rect x="24" y="24" width="8" height="8" rx="1"/><rect x="36" y="24" width="8" height="8" rx="1"/><rect x="48" y="24" width="4" height="8" rx="1"/></g>
+      <rect x="4" y="16" width="56" height="34" rx="3" fill="none" stroke="#16191e" stroke-opacity=".25" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-drum" viewBox="0 0 64 64">
+      <path d="M14 22l6 34h24l6-34z" fill="currentColor"/>
+      <ellipse cx="32" cy="22" rx="18" ry="5" fill="currentColor"/>
+      <ellipse cx="32" cy="22" rx="14" ry="3" fill="#16191e" opacity=".25"/>
+      <path d="M22 34l4 16M32 32v18M42 34l-4 16" stroke="#16191e" stroke-opacity=".2" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-brick" viewBox="0 0 64 64">
+      <rect x="4" y="18" width="56" height="28" rx="2" fill="currentColor"/>
+      <g stroke="#fff" stroke-opacity=".55" stroke-width="2"><line x1="22" y1="18" x2="22" y2="46"/><line x1="42" y1="18" x2="42" y2="46"/><line x1="4" y1="32" x2="60" y2="32"/></g>
+    </symbol>
+    <symbol id="i-roll" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="26" fill="currentColor"/>
+      <circle cx="32" cy="32" r="17" fill="none" stroke="#16191e" stroke-opacity=".3" stroke-width="2.5"/>
+      <circle cx="32" cy="32" r="9" fill="none" stroke="#16191e" stroke-opacity=".3" stroke-width="2.5"/>
+      <circle cx="32" cy="32" r="4" fill="#16191e" opacity=".6"/>
+    </symbol>
+    <symbol id="i-panel" viewBox="0 0 64 64">
+      <rect x="6" y="10" width="52" height="44" rx="3" fill="currentColor"/>
+      <g stroke="#16191e" stroke-opacity=".22" stroke-width="2"><line x1="6" y1="22" x2="58" y2="22"/><line x1="6" y1="34" x2="58" y2="34"/><line x1="6" y1="46" x2="58" y2="46"/></g>
+    </symbol>
+    <symbol id="i-tile" viewBox="0 0 64 64">
+      <rect x="10" y="10" width="44" height="44" rx="4" fill="currentColor" opacity=".45"/>
+      <rect x="6" y="14" width="44" height="44" rx="4" fill="currentColor" opacity=".7"/>
+      <rect x="14" y="8" width="44" height="44" rx="4" fill="currentColor"/>
+      <path d="M14 24h44M14 38h44" stroke="#fff" stroke-opacity=".4" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-bucket" viewBox="0 0 64 64">
+      <path d="M14 20h36l-4 36H18z" fill="currentColor"/>
+      <rect x="12" y="14" width="40" height="7" rx="3" fill="#16191e" opacity=".5"/>
+      <path d="M50 26c6 2 6 12 0 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M22 30v22" stroke="#fff" stroke-opacity=".3" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-pipe" viewBox="0 0 64 64">
+      <path d="M6 20h30a10 10 0 0 1 10 10v28" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="butt"/>
+      <rect x="2" y="16" width="10" height="12" rx="2" fill="#16191e" opacity=".5"/>
+      <path d="M6 20h30a10 10 0 0 1 10 10v28" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2" transform="translate(-2,-2)"/>
+    </symbol>
+    <symbol id="i-cable" viewBox="0 0 64 64">
+      <ellipse cx="30" cy="34" rx="24" ry="20" fill="none" stroke="currentColor" stroke-width="7"/>
+      <ellipse cx="30" cy="34" rx="12" ry="9" fill="none" stroke="currentColor" stroke-width="5" opacity=".6"/>
+      <path d="M54 34c4 0 6 4 6 8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-door" viewBox="0 0 64 64">
+      <rect x="10" y="6" width="44" height="52" rx="2" fill="currentColor"/>
+      <rect x="16" y="12" width="32" height="18" rx="2" fill="#16191e" opacity=".25"/>
+      <rect x="16" y="34" width="32" height="18" rx="2" fill="#16191e" opacity=".25"/>
+      <circle cx="46" cy="34" r="2.5" fill="#fff" opacity=".8"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 64 64">
+      <path d="M32 6l20 11.5v23L32 52 12 40.5v-23z" fill="currentColor"/>
+      <circle cx="32" cy="29" r="9" fill="#16191e" opacity=".35"/>
+      <rect x="28" y="40" width="8" height="18" rx="2" fill="currentColor" opacity=".8"/>
+    </symbol>
+  </defs>
+</svg>
 
 <header>
   <div class="wrap nav">
@@ -170,7 +300,7 @@ footer a:hover{color:var(--acc)}
     </a>
     <nav class="menu" aria-label="Ana menü">
       <a href="#urunler">Ürünler</a>
-      <a href="#hizmetler">Hizmetler</a>
+      <a href="#surec">Süreç</a>
       <a href="#ihracat">İhracat</a>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#iletisim">İletişim</a>
@@ -184,7 +314,7 @@ footer a:hover{color:var(--acc)}
   </div>
   <nav class="drawer" id="drawer" aria-label="Mobil menü">
     <a href="#urunler">Ürünler</a>
-    <a href="#hizmetler">Hizmetler</a>
+    <a href="#surec">Süreç</a>
     <a href="#ihracat">İhracat</a>
     <a href="#hakkimizda">Hakkımızda</a>
     <a href="#iletisim">İletişim</a>
@@ -195,16 +325,68 @@ footer a:hover{color:var(--acc)}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Toptan · Proje · İhracat</span>
-    <h1>Temelden çatıya,<br><span>her malzeme</span> tek adreste.</h1>
-    <p>Türköz; kaba yapı, yalıtım, boya, zemin, tesisat ve hırdavat dahil inşaat malzemelerini yurt içinde inşaat firmalarına, bayilere ve projelere tedarik eder; yurt dışına ihracatını yönetir.</p>
-    <div class="hero-btns">
-      <a href="#urunler" class="btn btn-acc">Ürünleri İncele</a>
-      <a href="#teklif" class="btn btn-ghost">Proje İçin Teklif İste</a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Toptan · Proje · İhracat</span>
+      <h1>Temelden çatıya,<br><span>her malzeme</span> tek adreste.</h1>
+      <p>Türköz; kaba yapı, yalıtım, boya, zemin, tesisat ve hırdavatı inşaat firmalarına, bayilere ve projelere yurt içinde tedarik eder; yurt dışına ihracatını yönetir.</p>
+      <div class="hero-btns">
+        <a href="#urunler" class="btn btn-acc">Ürünleri İncele</a>
+        <a href="#teklif" class="btn btn-ghost">Proje İçin Teklif İste</a>
+      </div>
+      <div class="hero-tags">
+        <span>Kaba yapı</span><span>Yalıtım</span><span>Seramik & zemin</span><span>Boya & kimyasal</span><span>Tesisat</span><span>Elektrik & hırdavat</span>
+      </div>
     </div>
-    <div class="hero-tags">
-      <span>Kaba yapı</span><span>Yalıtım</span><span>Seramik & zemin</span><span>Boya & kimyasal</span><span>Tesisat</span><span>Elektrik & hırdavat</span>
+
+    <!-- Animasyonlu inşaat sahnesi -->
+    <svg class="scene" viewBox="0 0 560 420" role="img" aria-label="Vinçle bina inşa eden şantiye ve sevkiyat kamyonu">
+      <circle class="sun" cx="120" cy="90" r="60" fill="#f2b705"/>
+      <!-- bina -->
+      <g>
+        <rect class="blk" style="--d:.1s" x="110" y="300" width="130" height="52" rx="3" fill="#c4572b"/>
+        <rect class="blk" style="--d:.25s" x="110" y="252" width="130" height="48" rx="3" fill="#e9e4d8"/>
+        <rect class="blk" style="--d:.4s" x="110" y="204" width="130" height="48" rx="3" fill="#c4572b"/>
+        <rect class="blk" style="--d:.55s" x="110" y="156" width="130" height="48" rx="3" fill="#e9e4d8"/>
+        <rect class="blk" style="--d:.7s" x="110" y="108" width="130" height="48" rx="3" fill="#c4572b"/>
+        <rect class="blk" style="--d:.85s" x="110" y="60" width="130" height="48" rx="3" fill="#f2b705"/>
+        <g fill="#16191e" opacity=".35">
+          <rect x="126" y="314" width="22" height="22" rx="2"/><rect x="168" y="314" width="22" height="22" rx="2"/><rect x="210" y="314" width="22" height="22" rx="2"/>
+          <rect x="126" y="220" width="22" height="18" rx="2"/><rect x="168" y="220" width="22" height="18" rx="2"/><rect x="210" y="220" width="22" height="18" rx="2"/>
+          <rect x="126" y="124" width="22" height="18" rx="2"/><rect x="168" y="124" width="22" height="18" rx="2"/><rect x="210" y="124" width="22" height="18" rx="2"/>
+        </g>
+      </g>
+      <!-- vinç -->
+      <rect x="318" y="40" width="14" height="312" fill="#f2b705"/>
+      <g stroke="#f2b705" stroke-width="3" fill="none">
+        <path d="M318 60l-60 30M332 60l-60 30M318 120l-30-30"/>
+      </g>
+      <rect x="250" y="34" width="210" height="12" rx="3" fill="#f2b705"/>
+      <rect x="300" y="24" width="30" height="16" rx="3" fill="#16191e"/>
+      <rect x="216" y="30" width="34" height="18" rx="3" fill="#16191e"/>
+      <g class="hook">
+        <line x1="400" y1="46" x2="400" y2="120" stroke="#eceff3" stroke-width="2.5"/>
+        <path d="M392 120a8 8 0 0 0 16 0" fill="none" stroke="#eceff3" stroke-width="3"/>
+        <rect x="384" y="132" width="32" height="26" rx="3" fill="#8a97a8"/>
+        <g stroke="#16191e" stroke-opacity=".3" stroke-width="2"><line x1="388" y1="132" x2="388" y2="158"/><line x1="400" y1="132" x2="400" y2="158"/><line x1="412" y1="132" x2="412" y2="158"/></g>
+      </g>
+      <!-- zemin -->
+      <rect x="0" y="352" width="560" height="68" fill="#22262d"/>
+      <g stroke="#f2b705" stroke-width="3" stroke-dasharray="18 14" opacity=".7"><line x1="0" y1="396" x2="560" y2="396"/></g>
+      <!-- kamyon -->
+      <g class="truck">
+        <rect x="0" y="300" width="70" height="40" rx="4" fill="#5b6b7c"/>
+        <rect x="70" y="316" width="28" height="24" rx="4" fill="#f2b705"/>
+        <rect x="76" y="320" width="14" height="10" rx="2" fill="#16191e" opacity=".6"/>
+        <circle cx="16" cy="346" r="10" fill="#16191e"/><circle cx="16" cy="346" r="4" fill="#8a97a8"/>
+        <circle cx="82" cy="346" r="10" fill="#16191e"/><circle cx="82" cy="346" r="4" fill="#8a97a8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="marq" aria-hidden="true">
+    <div class="marq-track">
+      <span>Çimento</span><span>İnşaat çeliği</span><span>Yalıtım</span><span>Seramik</span><span>Boya</span><span>Tesisat</span><span>Elektrik</span><span>Hırdavat</span>
+      <span>Çimento</span><span>İnşaat çeliği</span><span>Yalıtım</span><span>Seramik</span><span>Boya</span><span>Tesisat</span><span>Elektrik</span><span>Hırdavat</span>
     </div>
   </div>
 </div>
@@ -212,11 +394,11 @@ footer a:hover{color:var(--acc)}
 <!-- ÜRÜNLER -->
 <section id="urunler">
   <div class="wrap">
-    <span class="eyebrow">Ürün Kataloğu</span>
-    <h2>Kategoriye göre ara, hızlıca teklif al</h2>
-    <p class="lead">Örnek ürün listesidir. Gerçek stok, birim fiyat ve ölçü seçenekleri için teklif formunu kullanın.</p>
+    <span class="eyebrow rv">Ürün Kataloğu</span>
+    <h2 class="rv d1">Kategoriye göre bak, hızlıca teklif al</h2>
+    <p class="lead rv d2">Örnek ürün listesidir. Gerçek stok, birim fiyat ve ölçü seçenekleri için teklif formunu kullanın.</p>
 
-    <div class="toolbar">
+    <div class="toolbar rv">
       <div class="chips" id="chips" role="group" aria-label="Kategori filtresi"></div>
       <label class="search">
         <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
@@ -226,48 +408,82 @@ footer a:hover{color:var(--acc)}
 
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty">Aramanızla eşleşen ürün bulunamadı.</p>
-    <p class="note">Fiyatlar KDV hariç ve proje bazında değişir. Ürün görselleri ve ölçüler teklif sırasında paylaşılır.</p>
+    <p class="note">Fiyatlar KDV hariç ve proje bazında değişir. Görseller temsilidir.</p>
+  </div>
+</section>
+
+<!-- SÜREÇ -->
+<section id="surec" class="alt">
+  <div class="wrap">
+    <span class="eyebrow rv">Nasıl çalışıyoruz</span>
+    <h2 class="rv d1">Talepten sahaya dört adım</h2>
+    <div class="steps" id="steps">
+      <div class="step rv">
+        <div class="dot"><span class="n">1</span>
+          <svg class="i" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg></div>
+        <h3>Talep</h3>
+        <p>Formu doldurun veya metraj listenizi gönderin.</p>
+      </div>
+      <div class="step rv d1">
+        <div class="dot"><span class="n">2</span>
+          <svg class="i" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16V10M12 16V6M16 16v-4"/></svg></div>
+        <h3>Metraj & teklif</h3>
+        <p>Satış ekibi kalemleri kontrol eder, 1 iş günü içinde teklif sunar.</p>
+      </div>
+      <div class="step rv d2">
+        <div class="dot"><span class="n">3</span>
+          <svg class="i" viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></div>
+        <h3>Sevkiyat</h3>
+        <p>Depodan hazırlanan siparişler şantiye takvimine göre yola çıkar.</p>
+      </div>
+      <div class="step rv d3">
+        <div class="dot"><span class="n">4</span>
+          <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></div>
+        <h3>Teslim</h3>
+        <p>Teslim tutanağı ve fatura, sahada eksiksiz kontrol edilerek imzalanır.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- HİZMETLER -->
-<section id="hizmetler" class="alt">
+<section>
   <div class="wrap">
-    <span class="eyebrow">Hizmetlerimiz</span>
-    <h2>Malzemeden sahaya kadar</h2>
+    <span class="eyebrow rv">Hizmetlerimiz</span>
+    <h2 class="rv d1">Malzemeden sahaya kadar</h2>
     <div class="services">
-      <div class="svc">
+      <div class="svc rv">
         <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
         <h3>Proje Tedariki</h3>
         <p>Metraj listesine göre tüm malzemeleri tek sipariş ve tek teslimatla sahaya ulaştırıyoruz.</p>
       </div>
-      <div class="svc">
+      <div class="svc rv d1">
         <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></div>
         <h3>Lojistik & Nakliye</h3>
-        <p>Kendi filomuz ve anlaşmalı taşıyıcılarımızla yurt içi sevkiyat; konteyner ve parsiyel yükleme seçenekleri.</p>
+        <p>Yurt içi sevkiyat; kamyon, konteyner ve parsiyel yükleme seçenekleri.</p>
       </div>
-      <div class="svc">
+      <div class="svc rv d2">
         <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
         <h3>Toptan & Bayi Satışı</h3>
         <p>Bayilere özel fiyat listesi, vade seçenekleri ve düzenli stok planlaması.</p>
       </div>
-      <div class="svc">
+      <div class="svc rv d3">
         <div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <h3>Teknik Danışmanlık</h3>
-        <p>Malzeme seçimi, yalıtım detayı ve uygunluk belgeleri konusunda saha ve ofis desteği.</p>
+        <p>Malzeme seçimi, yalıtım detayı ve uygunluk belgeleri konusunda destek.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- İHRACAT -->
-<section id="ihracat">
+<section id="ihracat" class="alt">
   <div class="wrap split">
     <div>
-      <span class="eyebrow">Yurt Dışı Ticaret</span>
-      <h2>Türkiye'den dünyaya inşaat malzemesi</h2>
-      <p class="lead">Ülke bazlı uygunluk belgeleri, proforma fatura ve gümrük evrakı hazırlığı ile ihracat sürecini baştan sona yönetiyoruz.</p>
-      <ul class="checks">
+      <span class="eyebrow rv">Yurt Dışı Ticaret</span>
+      <h2 class="rv d1">Türkiye'den dünyaya inşaat malzemesi</h2>
+      <p class="lead rv d2">Ülke bazlı uygunluk belgeleri, proforma fatura ve gümrük evrakı hazırlığı ile ihracat sürecini baştan sona yönetiyoruz.</p>
+      <ul class="checks rv d2">
         <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Konteyner (FCL) ve parsiyel (LCL) yükleme</li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>FOB, CIF ve EXW teslim koşullarında teklif</li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ülkeye özel etiket, dil ve ambalaj uyarlaması</li>
@@ -275,15 +491,30 @@ footer a:hover{color:var(--acc)}
       </ul>
     </div>
     <div>
-      <div class="markets" aria-label="Hedef pazarlar">
-        <div class="market">Orta Doğu<small>Proje tedariki</small></div>
-        <div class="market">Kafkasya<small>Karayolu sevkiyatı</small></div>
-        <div class="market">Balkanlar<small>Bayi ağı</small></div>
-        <div class="market">Kuzey Afrika<small>Konteyner</small></div>
-        <div class="market">Orta Asya<small>Karayolu & demiryolu</small></div>
-        <div class="market">AB<small>CE uyumlu ürünler</small></div>
+      <div class="route rv d1" aria-label="Türkiye'den hedef pazarlara ihracat rotaları">
+        <svg viewBox="0 0 520 300" width="100%">
+          <!-- rotalar -->
+          <path id="r1" class="path" d="M90 150Q180 40 300 60"/>
+          <path id="r2" class="path" d="M90 150Q220 120 380 130"/>
+          <path id="r3" class="path" d="M90 150Q260 240 420 230"/>
+          <path id="r4" class="path" d="M90 150Q170 260 240 262"/>
+          <path id="r5" class="path" d="M90 150Q300 -10 470 40"/>
+          <circle class="ring" cx="90" cy="150" r="10"/>
+          <circle class="hub" cx="90" cy="150" r="9"/>
+          <text x="90" y="182" text-anchor="middle">TÜRKİYE</text>
+          <!-- hedefler -->
+          <circle class="dest" cx="300" cy="60" r="6"/><text x="300" y="46" text-anchor="middle">Orta Doğu</text>
+          <circle class="dest" cx="380" cy="130" r="6"/><text x="380" y="118" text-anchor="middle">Kafkasya</text>
+          <circle class="dest" cx="420" cy="230" r="6"/><text x="420" y="256" text-anchor="middle">Kuzey Afrika</text>
+          <circle class="dest" cx="240" cy="262" r="6"/><text x="240" y="288" text-anchor="middle">Balkanlar</text>
+          <circle class="dest" cx="470" cy="40" r="6"/><text x="470" y="22" text-anchor="middle">Orta Asya</text>
+          <!-- gemi/kamyon hareketi -->
+          <circle class="ship" r="5"><animateMotion dur="4s" repeatCount="indefinite" path="M90 150Q180 40 300 60"/></circle>
+          <circle class="ship" r="5"><animateMotion dur="5s" begin="1s" repeatCount="indefinite" path="M90 150Q260 240 420 230"/></circle>
+          <circle class="ship" r="5"><animateMotion dur="4.5s" begin="2s" repeatCount="indefinite" path="M90 150Q300 -10 470 40"/></circle>
+        </svg>
       </div>
-      <div class="terms">
+      <div class="terms rv d2">
         <div><span>Ödeme yöntemi</span><b>Akreditif, peşin, vadeli</b></div>
         <div><span>Teslim koşulu</span><b>EXW · FOB · CIF</b></div>
         <div><span>Sevkiyat sıklığı</span><b>Proje planına göre</b></div>
@@ -294,51 +525,39 @@ footer a:hover{color:var(--acc)}
 </section>
 
 <!-- HAKKIMIZDA -->
-<section id="hakkimizda" class="alt">
+<section id="hakkimizda">
   <div class="wrap about-grid">
     <div>
-      <span class="eyebrow">Hakkımızda</span>
-      <h2>Güven, stok ve zamanında teslimat</h2>
-      <p>Türköz, inşaat sektörünün ihtiyaç duyduğu malzemeleri tek noktadan sağlayan bir yapı malzemeleri tedarik şirketidir. Müteahhit, taşeron, bayi ve yurt dışı alıcılarla uzun vadeli ilişkiler kurmayı önceliyoruz.</p>
-      <p>Satış ekibimiz her projeye kendi metrajıyla yaklaşır; depo ve sevkiyat planlamasını şantiye takvimine göre yapar.</p>
+      <span class="eyebrow rv">Hakkımızda</span>
+      <h2 class="rv d1">Güven, stok ve zamanında teslimat</h2>
+      <p class="rv d2">Türköz, inşaat sektörünün ihtiyaç duyduğu malzemeleri tek noktadan sağlayan bir yapı malzemeleri tedarik şirketidir. Müteahhit, taşeron, bayi ve yurt dışı alıcılarla uzun vadeli ilişkiler kurmayı önceliyoruz.</p>
+      <p class="rv d3">Satış ekibimiz her projeye kendi metrajıyla yaklaşır; depo ve sevkiyat planlamasını şantiye takvimine göre yapar.</p>
     </div>
     <div class="pillars">
-      <div class="pillar"><h3>Geniş ürün yelpazesi</h3><p>Kaba yapıdan ince işçiliğe, ihtiyacın olan tüm kalemler tek tedarikçide.</p></div>
-      <div class="pillar"><h3>Planlı stok</h3><p>Sık kullanılan ürünler için sabit stok, büyük projeler için önceden rezervasyon.</p></div>
-      <div class="pillar"><h3>Şeffaf fiyatlandırma</h3><p>Teklifte birim fiyat, nakliye ve vade koşulları açıkça yazılır.</p></div>
-      <div class="pillar"><h3>Belgeli ürün</h3><p>Ürünlerin uygunluk belgelerini talep üzerine paylaşırız.</p></div>
+      <div class="pillar rv"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16"/></svg></div><h3>Geniş ürün yelpazesi</h3><p>Kaba yapıdan ince işçiliğe, ihtiyacın olan tüm kalemler tek tedarikçide.</p></div>
+      <div class="pillar rv d1"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6v10H3zM8 20v-6h8v6"/></svg></div><h3>Planlı stok</h3><p>Sık kullanılan ürünler sabit stokta, büyük projeler önceden rezerve.</p></div>
+      <div class="pillar rv d2"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M8 15h4"/></svg></div><h3>Şeffaf fiyat</h3><p>Teklifte birim fiyat, nakliye ve vade koşulları açıkça yazılır.</p></div>
+      <div class="pillar rv d3"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Belgeli ürün</h3><p>Ürünlerin uygunluk belgelerini talep üzerine paylaşırız.</p></div>
     </div>
   </div>
 </section>
 
 <!-- TEKLİF & İLETİŞİM -->
-<section id="iletisim">
+<section id="iletisim" class="alt">
   <div class="wrap contact-grid">
     <div>
-      <span class="eyebrow">İletişim</span>
-      <h2>Projenizi bize anlatın</h2>
-      <p class="lead">Metraj listesinizi veya kısa bir açıklamanızı gönderin; satış ekibimiz en geç iş günü içinde dönüş yapsın.</p>
+      <span class="eyebrow rv">İletişim</span>
+      <h2 class="rv d1">Projenizi bize anlatın</h2>
+      <p class="lead rv d2">Metraj listenizi veya kısa bir açıklamanızı gönderin; satış ekibimiz en geç iş günü içinde dönüş yapsın.</p>
       <div class="info">
-        <div>
-          <svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span><b>Merkez ofis</b>Örnek Mah. Sanayi Cad. No: 12, İstanbul</span>
-        </div>
-        <div>
-          <svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
-          <span><b>Telefon</b>+90 212 000 00 00</span>
-        </div>
-        <div>
-          <svg class="i" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
-          <span><b>E-posta</b>satis@ornek-turkoz.com</span>
-        </div>
-        <div>
-          <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          <span><b>İhracat</b>export@ornek-turkoz.com</span>
-        </div>
+        <div class="rv"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Merkez ofis</b>Örnek Mah. Sanayi Cad. No: 12, İstanbul</span></div>
+        <div class="rv d1"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><b>Telefon</b>+90 212 000 00 00</span></div>
+        <div class="rv d2"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg><span><b>E-posta</b>satis@ornek-turkoz.com</span></div>
+        <div class="rv d3"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span><b>İhracat</b>export@ornek-turkoz.com</span></div>
       </div>
     </div>
 
-    <form class="rfq" id="teklif" novalidate>
+    <form class="rfq rv d1" id="teklif" novalidate>
       <label>Ad soyad *
         <input name="ad" required autocomplete="name">
       </label>
@@ -396,7 +615,7 @@ footer a:hover{color:var(--acc)}
       <div>
         <h4>Kurumsal</h4>
         <ul>
-          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#surec">Süreç</a></li>
           <li><a href="#ihracat">İhracat</a></li>
           <li><a href="#hakkimizda">Hakkımızda</a></li>
           <li><a href="#iletisim">İletişim</a></li>
@@ -409,25 +628,27 @@ footer a:hover{color:var(--acc)}
 
 <script>
 (function(){
+  document.documentElement.classList.add("js");
+
   var PRODUCTS = [
-    {ad:"CEM I 42,5 R Çimento", kat:"Kaba yapı", birim:"50 kg torba", sku:"KY-1001"},
-    {ad:"Nervürlü İnşaat Çeliği B500C", kat:"Kaba yapı", birim:"Ton · Ø8–Ø32", sku:"KY-1002"},
-    {ad:"Gazbeton Blok 60×20×30", kat:"Kaba yapı", birim:"Palet", sku:"KY-1003"},
-    {ad:"Hazır Beton C30/37", kat:"Kaba yapı", birim:"m³", sku:"KY-1004"},
-    {ad:"Tuğla Dolu / Delikli", kat:"Kaba yapı", birim:"Adet · Palet", sku:"KY-1005"},
-    {ad:"Kendinden Yapışkanlı Membran 4 mm", kat:"Yalıtım", birim:"Rulo 10 m²", sku:"YA-2001"},
-    {ad:"XPS Isı Yalıtım Levhası 50 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2002"},
-    {ad:"Taş Yünü Cephe Levhası 100 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2003"},
-    {ad:"Seramik Duvar Karosu 30×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3001"},
-    {ad:"Porselen Yer Karosu 60×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3002"},
-    {ad:"Alçıpan 12,5 mm", kat:"Boya & kimyasal", birim:"Levha", sku:"BK-4001"},
-    {ad:"Dış Cephe Su Yalıtım Boyası", kat:"Boya & kimyasal", birim:"20 kg kova", sku:"BK-4002"},
-    {ad:"Çimento Esaslı Sıva 25 kg", kat:"Boya & kimyasal", birim:"Torba", sku:"BK-4003"},
-    {ad:"PPR Boru Ø25 PN20", kat:"Tesisat", birim:"Metre · Boy", sku:"TE-5001"},
-    {ad:"Kombi Bağlantı Seti", kat:"Tesisat", birim:"Takım", sku:"TE-5002"},
-    {ad:"Kablo NYM 3×2,5", kat:"Elektrik & hırdavat", birim:"Metre · Makara", sku:"EH-6001"},
-    {ad:"Kompozit Kapı Kasası", kat:"Elektrik & hırdavat", birim:"Adet", sku:"EH-6002"},
-    {ad:"Vida ve Dübel Seti", kat:"Elektrik & hırdavat", birim:"Kutu", sku:"EH-6003"}
+    {ad:"CEM I 42,5 R Çimento", kat:"Kaba yapı", birim:"50 kg torba", sku:"KY-1001", ic:"bag", c:"#8a939d"},
+    {ad:"Nervürlü İnşaat Çeliği B500C", kat:"Kaba yapı", birim:"Ton · Ø8–Ø32", sku:"KY-1002", ic:"rebar", c:"#5b6b7c"},
+    {ad:"Gazbeton Blok 60×20×30", kat:"Kaba yapı", birim:"Palet", sku:"KY-1003", ic:"block", c:"#c9bfa8"},
+    {ad:"Hazır Beton C30/37", kat:"Kaba yapı", birim:"m³", sku:"KY-1004", ic:"drum", c:"#7d8792"},
+    {ad:"Tuğla Dolu / Delikli", kat:"Kaba yapı", birim:"Adet · Palet", sku:"KY-1005", ic:"brick", c:"#c4572b"},
+    {ad:"Kendinden Yapışkanlı Membran 4 mm", kat:"Yalıtım", birim:"Rulo 10 m²", sku:"YA-2001", ic:"roll", c:"#d99e00"},
+    {ad:"XPS Isı Yalıtım Levhası 50 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2002", ic:"panel", c:"#f2b705"},
+    {ad:"Taş Yünü Cephe Levhası 100 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2003", ic:"panel", c:"#e0a526"},
+    {ad:"Seramik Duvar Karosu 30×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3001", ic:"tile", c:"#4a9bb8"},
+    {ad:"Porselen Yer Karosu 60×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3002", ic:"tile", c:"#2f7d9c"},
+    {ad:"Alçıpan 12,5 mm", kat:"Boya & kimyasal", birim:"Levha", sku:"BK-4001", ic:"panel", c:"#b9c2cc"},
+    {ad:"Dış Cephe Su Yalıtım Boyası", kat:"Boya & kimyasal", birim:"20 kg kova", sku:"BK-4002", ic:"bucket", c:"#2e9d6a"},
+    {ad:"Çimento Esaslı Sıva 25 kg", kat:"Boya & kimyasal", birim:"Torba", sku:"BK-4003", ic:"bag", c:"#a58d6b"},
+    {ad:"PPR Boru Ø25 PN20", kat:"Tesisat", birim:"Metre · Boy", sku:"TE-5001", ic:"pipe", c:"#2e9d6a"},
+    {ad:"Kombi Bağlantı Seti", kat:"Tesisat", birim:"Takım", sku:"TE-5002", ic:"pipe", c:"#3aa6a0"},
+    {ad:"Kablo NYM 3×2,5", kat:"Elektrik & hırdavat", birim:"Metre · Makara", sku:"EH-6001", ic:"cable", c:"#d64545"},
+    {ad:"Kompozit Kapı Kasası", kat:"Elektrik & hırdavat", birim:"Adet", sku:"EH-6002", ic:"door", c:"#8b5e3c"},
+    {ad:"Vida ve Dübel Seti", kat:"Elektrik & hırdavat", birim:"Kutu", sku:"EH-6003", ic:"bolt", c:"#8a97a8"}
   ];
   var KATS = ["Tümü"].concat(PRODUCTS.map(function(p){return p.kat;}).filter(function(v,i,a){return a.indexOf(v)===i;}));
 
@@ -476,14 +697,20 @@ footer a:hover{color:var(--acc)}
     });
     grid.innerHTML = list.map(function(p){
       return '<article class="card">' +
-        '<span class="cat">' + esc(p.kat) + '</span>' +
-        '<h3>' + esc(p.ad) + '</h3>' +
-        '<div class="meta">Birim: ' + esc(p.birim) + '</div>' +
-        '<div class="foot"><span class="sku">' + esc(p.sku) + '</span>' +
-        '<button type="button" data-ad="' + esc(p.kat) + '" data-urun="' + esc(p.ad) + '">Teklif iste →</button></div>' +
-        '</article>';
+        '<div class="pic" style="--c:' + p.c + '">' +
+          '<span class="tag">' + esc(p.kat) + '</span>' +
+          '<svg aria-hidden="true"><use href="#i-' + p.ic + '"/></svg>' +
+        '</div>' +
+        '<div class="body">' +
+          '<h3>' + esc(p.ad) + '</h3>' +
+          '<div class="meta">Birim: ' + esc(p.birim) + '</div>' +
+          '<div class="foot"><span class="sku">' + esc(p.sku) + '</span>' +
+          '<button type="button" data-ad="' + esc(p.kat) + '" data-urun="' + esc(p.ad) + '">Teklif iste →</button></div>' +
+        '</div>' +
+      '</article>';
     }).join("");
     empty.style.display = list.length ? "none" : "block";
+    observeNew();
   }
 
   grid.addEventListener("click", function(e){
@@ -491,15 +718,36 @@ footer a:hover{color:var(--acc)}
     if(!btn) return;
     var form = document.getElementById("teklif");
     var mesaj = form.elements.mesaj;
-    kategoriSel.value = kategoriSel.querySelector('option[value="' + btn.dataset.ad + '"]') ? btn.dataset.ad : kategoriSel.value;
+    if(kategoriSel.querySelector('option[value="' + btn.dataset.ad + '"]')) kategoriSel.value = btn.dataset.ad;
     var ekle = btn.dataset.urun + " ürünü için teklif istiyorum. Miktar: ";
     if(mesaj.value.indexOf(ekle) === -1) mesaj.value = ekle + (mesaj.value ? "\n" + mesaj.value : "");
-    form.scrollIntoView({behavior:"smooth", block:"start"});
-    setTimeout(function(){ form.elements.ad.focus(); }, 500);
+    form.scrollIntoView({behavior:"smooth", block:"center"});
+    setTimeout(function(){ form.elements.ad.focus({preventScroll:true}); }, 600);
   });
 
   q.addEventListener("input", render);
   render();
+
+  /* Ekrana girince öğeleri canlandır */
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {threshold:.12, rootMargin:"0px 0px -40px 0px"}) : null;
+
+  function observeNew(){
+    document.querySelectorAll(".rv:not(.in)").forEach(function(el){
+      if(io) io.observe(el); else el.classList.add("in");
+    });
+  }
+  observeNew();
+
+  /* Süreç çizgisi ilerlemesi */
+  var stepsEl = document.getElementById("steps");
+  var stepsIo = "IntersectionObserver" in window ? new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){ stepsEl.style.setProperty("--p","100%"); stepsIo.disconnect(); }
+  }, {threshold:.4}) : null;
+  if(stepsIo) stepsIo.observe(stepsEl); else stepsEl.style.setProperty("--p","100%");
 
   var form = document.getElementById("teklif");
   form.addEventListener("submit", function(e){
