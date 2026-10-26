@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Türköz | İnşaat Malzemeleri – Yurt İçi & Yurt Dışı</title>
+<meta name="description" content="Türköz: kaba yapıdan ince işçiliğe tüm inşaat malzemelerinin yurt içi toptan satışı ve yurt dışı ihracatı. Teklif isteyin.">
+<style>
+:root{
+  --ink:#16191e;--ink2:#22262d;--steel:#5b6470;--line:#e2e5ea;
+  --bg:#f5f6f8;--card:#ffffff;--tx:#16191e;--mut:#5b6470;
+  --acc:#f2b705;--acc2:#d99e00;--accTx:#8a6500;--dark:#16191e;
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1216;--card:#181c22;--tx:#eceff3;--mut:#9aa3af;--line:#2a2f38;--accTx:#f2b705;--dark:#0a0c0f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1216;--card:#181c22;--tx:#eceff3;--mut:#9aa3af;--line:#2a2f38;--accTx:#f2b705;--dark:#0a0c0f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button,input,select,textarea{font:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(34px,6vw,64px);font-weight:800}
+h2{font-size:clamp(26px,4vw,40px);font-weight:800}
+h3{font-size:18px;font-weight:700}
+section{padding:72px 0}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accTx);margin-bottom:12px}
+.lead{color:var(--mut);max-width:640px;margin-top:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:8px;font-weight:700;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn-acc{background:var(--acc);color:#16191e}.btn-acc:hover{background:var(--acc2)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}.btn-ghost:hover{border-color:var(--acc);color:var(--acc)}
+.btn-line{border-color:var(--line);background:var(--card);color:var(--tx)}.btn-line:hover{border-color:var(--acc)}
+svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:var(--dark);color:#fff;border-bottom:1px solid #000}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800}
+.logo-mark{width:36px;height:36px;border-radius:8px;background:var(--acc);color:#16191e;display:grid;place-items:center;font-size:18px;font-weight:900}
+.logo b{font-size:20px;letter-spacing:.12em;display:block;line-height:1}
+.logo small{font-size:10px;letter-spacing:.3em;color:var(--acc);font-weight:700}
+.menu{display:flex;gap:26px;font-size:14px;font-weight:600}
+.menu a{opacity:.85}.menu a:hover{opacity:1;color:var(--acc)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}
+.drawer{display:none}
+
+/* HERO */
+.hero{position:relative;background:var(--dark);color:#fff;padding:104px 0 96px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(242,183,5,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(242,183,5,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,#000 30%,transparent 95%)}
+.hero .wrap{position:relative}
+.hero .eyebrow{color:var(--acc)}
+.hero h1 span{color:var(--acc)}
+.hero p{font-size:18px;color:#c9d0da;max-width:620px;margin:20px 0 32px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:48px}
+.hero-tags span{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px;font-size:13px;color:#dfe5ec}
+
+/* PRODUCTS */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:32px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}
+.chip.on,.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search{position:relative;min-width:240px}
+.search input{width:100%;padding:11px 14px 11px 40px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--tx)}
+.search input:focus{outline:2px solid var(--acc);outline-offset:1px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;transition:.2s}
+.card:hover{transform:translateY(-2px);border-color:var(--acc)}
+.card .cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accTx)}
+.card h3{font-size:16px}
+.card .meta{font-size:13px;color:var(--mut)}
+.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line)}
+.card .sku{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.card button{background:none;border:0;color:var(--accTx);font-weight:700;font-size:14px;cursor:pointer;padding:0}
+.card button:hover{text-decoration:underline}
+.empty{display:none;color:var(--mut);padding:40px 0;text-align:center}
+.note{font-size:13px;color:var(--mut);margin-top:20px}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.svc .ic{width:46px;height:46px;border-radius:10px;background:var(--acc);color:#16191e;display:grid;place-items:center;margin-bottom:16px}
+.svc p{color:var(--mut);font-size:14px;margin-top:8px}
+
+/* EXPORT */
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.checks{list-style:none;display:grid;gap:14px;margin-top:24px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks svg{color:var(--accTx);margin-top:2px}
+.markets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.market{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--bg);font-weight:700;font-size:14px;text-align:center}
+.market small{display:block;font-weight:500;color:var(--mut);font-size:12px;margin-top:2px}
+.terms{margin-top:20px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.terms div{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-size:14px}
+.terms div:last-child{border-bottom:0}
+.terms b{color:var(--accTx)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.about-grid p{color:var(--mut);margin-top:16px}
+.pillars{display:grid;gap:14px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;border-left:4px solid var(--acc)}
+.pillar h3{margin-bottom:4px}
+.pillar p{font-size:14px;color:var(--mut)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start}
+.info{display:grid;gap:14px;margin-top:24px}
+.info div{display:flex;gap:14px;align-items:flex-start;color:var(--mut);font-size:15px}
+.info svg{color:var(--accTx);margin-top:2px}
+.info b{display:block;color:var(--tx)}
+form.rfq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form.rfq label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mut)}
+form.rfq .full{grid-column:1/-1}
+form.rfq input,form.rfq select,form.rfq textarea{padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--tx);width:100%}
+form.rfq textarea{min-height:110px;resize:vertical}
+form.rfq input:focus,form.rfq select:focus,form.rfq textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+form.rfq input.bad{border-color:#d64545}
+form.rfq .btn{grid-column:1/-1;width:100%}
+.ok{display:none;grid-column:1/-1;background:#e7f6ec;color:#17652f;border-radius:8px;padding:12px 14px;font-size:14px;font-weight:600}
+.ok.show{display:block}
+
+/* FOOTER */
+footer{background:var(--dark);color:#aab3bf;padding:48px 0 28px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+footer h4{color:#fff;font-size:14px;margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:var(--acc)}
+.copy{margin-top:36px;padding-top:20px;border-top:1px solid #222831;font-size:12px;color:#7c8694}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .menu,.nav-cta .btn{display:none}
+  .burger{display:block}
+  .drawer.open{display:grid;gap:4px;padding:8px 16px 16px;border-top:1px solid #222831;background:var(--dark)}
+  .drawer{display:none}
+  .drawer a{padding:12px 4px;border-bottom:1px solid #222831;font-weight:600}
+  .split,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid > div:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  section{padding:56px 0}
+  .hero{padding:72px 0 64px}
+  form.rfq{grid-template-columns:1fr;padding:20px}
+  .markets{grid-template-columns:1fr 1fr}
+  .search{min-width:0;width:100%}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Türköz ana sayfa">
+      <span class="logo-mark">T</span>
+      <span><b>TÜRKÖZ</b><small>YAPI MALZEMELERİ</small></span>
+    </a>
+    <nav class="menu" aria-label="Ana menü">
+      <a href="#urunler">Ürünler</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#ihracat">İhracat</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#teklif" class="btn btn-acc">Teklif Al</a>
+      <button class="burger" aria-label="Menüyü aç" aria-expanded="false" id="burger">
+        <svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="Mobil menü">
+    <a href="#urunler">Ürünler</a>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#ihracat">İhracat</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Toptan · Proje · İhracat</span>
+    <h1>Temelden çatıya,<br><span>her malzeme</span> tek adreste.</h1>
+    <p>Türköz; kaba yapı, yalıtım, boya, zemin, tesisat ve hırdavat dahil inşaat malzemelerini yurt içinde inşaat firmalarına, bayilere ve projelere tedarik eder; yurt dışına ihracatını yönetir.</p>
+    <div class="hero-btns">
+      <a href="#urunler" class="btn btn-acc">Ürünleri İncele</a>
+      <a href="#teklif" class="btn btn-ghost">Proje İçin Teklif İste</a>
+    </div>
+    <div class="hero-tags">
+      <span>Kaba yapı</span><span>Yalıtım</span><span>Seramik & zemin</span><span>Boya & kimyasal</span><span>Tesisat</span><span>Elektrik & hırdavat</span>
+    </div>
+  </div>
+</div>
+
+<!-- ÜRÜNLER -->
+<section id="urunler">
+  <div class="wrap">
+    <span class="eyebrow">Ürün Kataloğu</span>
+    <h2>Kategoriye göre ara, hızlıca teklif al</h2>
+    <p class="lead">Örnek ürün listesidir. Gerçek stok, birim fiyat ve ölçü seçenekleri için teklif formunu kullanın.</p>
+
+    <div class="toolbar">
+      <div class="chips" id="chips" role="group" aria-label="Kategori filtresi"></div>
+      <label class="search">
+        <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" id="q" placeholder="Ürün ara (ör. çimento, membran)" aria-label="Ürün ara">
+      </label>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty">Aramanızla eşleşen ürün bulunamadı.</p>
+    <p class="note">Fiyatlar KDV hariç ve proje bazında değişir. Ürün görselleri ve ölçüler teklif sırasında paylaşılır.</p>
+  </div>
+</section>
+
+<!-- HİZMETLER -->
+<section id="hizmetler" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Hizmetlerimiz</span>
+    <h2>Malzemeden sahaya kadar</h2>
+    <div class="services">
+      <div class="svc">
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Proje Tedariki</h3>
+        <p>Metraj listesine göre tüm malzemeleri tek sipariş ve tek teslimatla sahaya ulaştırıyoruz.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></div>
+        <h3>Lojistik & Nakliye</h3>
+        <p>Kendi filomuz ve anlaşmalı taşıyıcılarımızla yurt içi sevkiyat; konteyner ve parsiyel yükleme seçenekleri.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+        <h3>Toptan & Bayi Satışı</h3>
+        <p>Bayilere özel fiyat listesi, vade seçenekleri ve düzenli stok planlaması.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Teknik Danışmanlık</h3>
+        <p>Malzeme seçimi, yalıtım detayı ve uygunluk belgeleri konusunda saha ve ofis desteği.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- İHRACAT -->
+<section id="ihracat">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Yurt Dışı Ticaret</span>
+      <h2>Türkiye'den dünyaya inşaat malzemesi</h2>
+      <p class="lead">Ülke bazlı uygunluk belgeleri, proforma fatura ve gümrük evrakı hazırlığı ile ihracat sürecini baştan sona yönetiyoruz.</p>
+      <ul class="checks">
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Konteyner (FCL) ve parsiyel (LCL) yükleme</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>FOB, CIF ve EXW teslim koşullarında teklif</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ülkeye özel etiket, dil ve ambalaj uyarlaması</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Proforma fatura, menşe şahadetnamesi ve gümrük evrakı</li>
+      </ul>
+    </div>
+    <div>
+      <div class="markets" aria-label="Hedef pazarlar">
+        <div class="market">Orta Doğu<small>Proje tedariki</small></div>
+        <div class="market">Kafkasya<small>Karayolu sevkiyatı</small></div>
+        <div class="market">Balkanlar<small>Bayi ağı</small></div>
+        <div class="market">Kuzey Afrika<small>Konteyner</small></div>
+        <div class="market">Orta Asya<small>Karayolu & demiryolu</small></div>
+        <div class="market">AB<small>CE uyumlu ürünler</small></div>
+      </div>
+      <div class="terms">
+        <div><span>Ödeme yöntemi</span><b>Akreditif, peşin, vadeli</b></div>
+        <div><span>Teslim koşulu</span><b>EXW · FOB · CIF</b></div>
+        <div><span>Sevkiyat sıklığı</span><b>Proje planına göre</b></div>
+        <div><span>Dil desteği</span><b>Türkçe · İngilizce</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HAKKIMIZDA -->
+<section id="hakkimizda" class="alt">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">Hakkımızda</span>
+      <h2>Güven, stok ve zamanında teslimat</h2>
+      <p>Türköz, inşaat sektörünün ihtiyaç duyduğu malzemeleri tek noktadan sağlayan bir yapı malzemeleri tedarik şirketidir. Müteahhit, taşeron, bayi ve yurt dışı alıcılarla uzun vadeli ilişkiler kurmayı önceliyoruz.</p>
+      <p>Satış ekibimiz her projeye kendi metrajıyla yaklaşır; depo ve sevkiyat planlamasını şantiye takvimine göre yapar.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><h3>Geniş ürün yelpazesi</h3><p>Kaba yapıdan ince işçiliğe, ihtiyacın olan tüm kalemler tek tedarikçide.</p></div>
+      <div class="pillar"><h3>Planlı stok</h3><p>Sık kullanılan ürünler için sabit stok, büyük projeler için önceden rezervasyon.</p></div>
+      <div class="pillar"><h3>Şeffaf fiyatlandırma</h3><p>Teklifte birim fiyat, nakliye ve vade koşulları açıkça yazılır.</p></div>
+      <div class="pillar"><h3>Belgeli ürün</h3><p>Ürünlerin uygunluk belgelerini talep üzerine paylaşırız.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEKLİF & İLETİŞİM -->
+<section id="iletisim">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">İletişim</span>
+      <h2>Projenizi bize anlatın</h2>
+      <p class="lead">Metraj listesinizi veya kısa bir açıklamanızı gönderin; satış ekibimiz en geç iş günü içinde dönüş yapsın.</p>
+      <div class="info">
+        <div>
+          <svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span><b>Merkez ofis</b>Örnek Mah. Sanayi Cad. No: 12, İstanbul</span>
+        </div>
+        <div>
+          <svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          <span><b>Telefon</b>+90 212 000 00 00</span>
+        </div>
+        <div>
+          <svg class="i" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
+          <span><b>E-posta</b>satis@ornek-turkoz.com</span>
+        </div>
+        <div>
+          <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span><b>İhracat</b>export@ornek-turkoz.com</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="rfq" id="teklif" novalidate>
+      <label>Ad soyad *
+        <input name="ad" required autocomplete="name">
+      </label>
+      <label>Firma
+        <input name="firma" autocomplete="organization">
+      </label>
+      <label>E-posta *
+        <input name="email" type="email" required autocomplete="email">
+      </label>
+      <label>Telefon
+        <input name="tel" type="tel" autocomplete="tel">
+      </label>
+      <label>Müşteri tipi
+        <select name="tip">
+          <option>Müteahhit / İnşaat firması</option>
+          <option>Taşeron</option>
+          <option>Bayi / Toptancı</option>
+          <option>Yurt dışı alıcı</option>
+          <option>Bireysel</option>
+        </select>
+      </label>
+      <label>Ürün kategorisi
+        <select name="kategori" id="kategoriSel"></select>
+      </label>
+      <label class="full">Talep detayı
+        <textarea name="mesaj" placeholder="Ürün, miktar, teslim adresi ve hedef tarih. Metrajınız varsa ekleyin."></textarea>
+      </label>
+      <div class="ok" id="ok" role="status">Talebiniz alındı. Satış ekibimiz sizinle iletişime geçecek. (Demo: veri gönderilmez.)</div>
+      <button class="btn btn-acc" type="submit">Teklif Talebi Gönder</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px">
+          <span class="logo-mark">T</span>
+          <span><b>TÜRKÖZ</b><small>YAPI MALZEMELERİ</small></span>
+        </div>
+        <p style="max-width:360px">Yurt içi toptan satış ve yurt dışı ihracat için inşaat malzemesi tedarikçisi.</p>
+      </div>
+      <div>
+        <h4>Ürünler</h4>
+        <ul>
+          <li><a href="#urunler">Kaba yapı</a></li>
+          <li><a href="#urunler">Yalıtım</a></li>
+          <li><a href="#urunler">Seramik & zemin</a></li>
+          <li><a href="#urunler">Tesisat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kurumsal</h4>
+        <ul>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#ihracat">İhracat</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 Türköz Yapı Malzemeleri. Bu site bir demo çalışmasıdır; firma bilgileri, adres ve iletişim bilgileri örnektir.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PRODUCTS = [
+    {ad:"CEM I 42,5 R Çimento", kat:"Kaba yapı", birim:"50 kg torba", sku:"KY-1001"},
+    {ad:"Nervürlü İnşaat Çeliği B500C", kat:"Kaba yapı", birim:"Ton · Ø8–Ø32", sku:"KY-1002"},
+    {ad:"Gazbeton Blok 60×20×30", kat:"Kaba yapı", birim:"Palet", sku:"KY-1003"},
+    {ad:"Hazır Beton C30/37", kat:"Kaba yapı", birim:"m³", sku:"KY-1004"},
+    {ad:"Tuğla Dolu / Delikli", kat:"Kaba yapı", birim:"Adet · Palet", sku:"KY-1005"},
+    {ad:"Kendinden Yapışkanlı Membran 4 mm", kat:"Yalıtım", birim:"Rulo 10 m²", sku:"YA-2001"},
+    {ad:"XPS Isı Yalıtım Levhası 50 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2002"},
+    {ad:"Taş Yünü Cephe Levhası 100 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2003"},
+    {ad:"Seramik Duvar Karosu 30×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3001"},
+    {ad:"Porselen Yer Karosu 60×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3002"},
+    {ad:"Alçıpan 12,5 mm", kat:"Boya & kimyasal", birim:"Levha", sku:"BK-4001"},
+    {ad:"Dış Cephe Su Yalıtım Boyası", kat:"Boya & kimyasal", birim:"20 kg kova", sku:"BK-4002"},
+    {ad:"Çimento Esaslı Sıva 25 kg", kat:"Boya & kimyasal", birim:"Torba", sku:"BK-4003"},
+    {ad:"PPR Boru Ø25 PN20", kat:"Tesisat", birim:"Metre · Boy", sku:"TE-5001"},
+    {ad:"Kombi Bağlantı Seti", kat:"Tesisat", birim:"Takım", sku:"TE-5002"},
+    {ad:"Kablo NYM 3×2,5", kat:"Elektrik & hırdavat", birim:"Metre · Makara", sku:"EH-6001"},
+    {ad:"Kompozit Kapı Kasası", kat:"Elektrik & hırdavat", birim:"Adet", sku:"EH-6002"},
+    {ad:"Vida ve Dübel Seti", kat:"Elektrik & hırdavat", birim:"Kutu", sku:"EH-6003"}
+  ];
+  var KATS = ["Tümü"].concat(PRODUCTS.map(function(p){return p.kat;}).filter(function(v,i,a){return a.indexOf(v)===i;}));
+
+  var grid = document.getElementById("grid");
+  var chips = document.getElementById("chips");
+  var q = document.getElementById("q");
+  var empty = document.getElementById("empty");
+  var kategoriSel = document.getElementById("kategoriSel");
+  var active = "Tümü";
+
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+
+  KATS.forEach(function(k){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip" + (k === active ? " on" : "");
+    b.textContent = k;
+    b.setAttribute("aria-pressed", k === active ? "true" : "false");
+    b.addEventListener("click", function(){
+      active = k;
+      Array.prototype.forEach.call(chips.children, function(c){
+        var on = c.textContent === active;
+        c.classList.toggle("on", on);
+        c.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      render();
+    });
+    chips.appendChild(b);
+  });
+
+  KATS.slice(1).forEach(function(k){
+    var o = document.createElement("option");
+    o.textContent = k;
+    kategoriSel.appendChild(o);
+  });
+  var other = document.createElement("option");
+  other.textContent = "Diğer / Birden fazla";
+  kategoriSel.appendChild(other);
+
+  function render(){
+    var term = q.value.trim().toLowerCase();
+    var list = PRODUCTS.filter(function(p){
+      var okKat = active === "Tümü" || p.kat === active;
+      var okQ = !term || (p.ad + " " + p.kat + " " + p.sku).toLowerCase().indexOf(term) !== -1;
+      return okKat && okQ;
+    });
+    grid.innerHTML = list.map(function(p){
+      return '<article class="card">' +
+        '<span class="cat">' + esc(p.kat) + '</span>' +
+        '<h3>' + esc(p.ad) + '</h3>' +
+        '<div class="meta">Birim: ' + esc(p.birim) + '</div>' +
+        '<div class="foot"><span class="sku">' + esc(p.sku) + '</span>' +
+        '<button type="button" data-ad="' + esc(p.kat) + '" data-urun="' + esc(p.ad) + '">Teklif iste →</button></div>' +
+        '</article>';
+    }).join("");
+    empty.style.display = list.length ? "none" : "block";
+  }
+
+  grid.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-urun]");
+    if(!btn) return;
+    var form = document.getElementById("teklif");
+    var mesaj = form.elements.mesaj;
+    kategoriSel.value = kategoriSel.querySelector('option[value="' + btn.dataset.ad + '"]') ? btn.dataset.ad : kategoriSel.value;
+    var ekle = btn.dataset.urun + " ürünü için teklif istiyorum. Miktar: ";
+    if(mesaj.value.indexOf(ekle) === -1) mesaj.value = ekle + (mesaj.value ? "\n" + mesaj.value : "");
+    form.scrollIntoView({behavior:"smooth", block:"start"});
+    setTimeout(function(){ form.elements.ad.focus(); }, 500);
+  });
+
+  q.addEventListener("input", render);
+  render();
+
+  var form = document.getElementById("teklif");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var ok = true;
+    ["ad","email"].forEach(function(n){
+      var el = form.elements[n];
+      var valid = el.value.trim() !== "" && (n !== "email" || el.checkValidity());
+      el.classList.toggle("bad", !valid);
+      if(!valid) ok = false;
+    });
+    if(!ok){ form.querySelector(".bad").focus(); return; }
+    document.getElementById("ok").classList.add("show");
+    form.reset();
+  });
+
+  var burger = document.getElementById("burger");
+  var drawer = document.getElementById("drawer");
+  burger.addEventListener("click", function(){
+    var open = drawer.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  drawer.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ drawer.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
+  });
+})();
+</script>
+</body>
+</html>
