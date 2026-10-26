@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Türköz | İnşaat Malzemeleri – Yurt İçi & Yurt Dışı</title>
-<meta name="description" content="Türköz: kaba yapıdan ince işçiliğe tüm inşaat malzemelerinin yurt içi toptan satışı ve yurt dışı ihracatı. Teklif isteyin.">
+<title>Türköz | İnşaat Malzemeleri Kataloğu</title>
+<meta name="description" content="Türköz: kaba yapıdan ince işçiliğe inşaat malzemelerinin dijital kataloğu. Ürünleri inceleyin, kurumsal iletişim için bize ulaşın.">
 <style>
 :root{
-  --ink:#16191e;--ink2:#22262d;--line:#e2e5ea;
+  --ink:#16191e;--line:#e2e5ea;
   --bg:#f5f6f8;--card:#ffffff;--tx:#16191e;--mut:#5b6470;
   --acc:#f2b705;--acc2:#d99e00;--accTx:#8a6500;--dark:#16191e;
   --radius:14px;
@@ -83,7 +83,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-f
 .marq-track span:after{content:"✦";margin-left:40px;opacity:.6}
 @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ---------- PRODUCTS ---------- */
+/* ---------- CATALOG ---------- */
 .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:32px 0 24px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
@@ -102,21 +102,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-f
 .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .body h3{font-size:16px}
 .body .meta{font-size:13px;color:var(--mut)}
-.body .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line)}
-.body .sku{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
-.body button{background:none;border:0;color:var(--accTx);font-weight:800;font-size:14px;cursor:pointer;padding:0}
-.body button:hover{text-decoration:underline}
+.body .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--mut)}
+.body .sku{font-variant-numeric:tabular-nums;font-weight:700;color:var(--tx)}
 .empty{display:none;color:var(--mut);padding:40px 0;text-align:center}
 .note{font-size:13px;color:var(--mut);margin-top:22px}
-
-/* ---------- PROCESS ---------- */
-.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
-.steps:before{content:"";position:absolute;top:44px;left:12%;right:12%;height:3px;background:linear-gradient(90deg,var(--acc) var(--p,0%),var(--line) var(--p,0%));border-radius:3px;transition:--p 1.4s}
-.step{position:relative;text-align:center;padding:0 10px}
-.step .dot{width:88px;height:88px;margin:0 auto 18px;border-radius:50%;background:var(--card);border:3px solid var(--acc);display:grid;place-items:center;position:relative;z-index:1;color:var(--accTx)}
-.step .dot svg{width:40px;height:40px}
-.step .n{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center}
-.step p{color:var(--mut);font-size:14px;margin-top:6px}
 
 /* ---------- SERVICES ---------- */
 .alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -142,10 +131,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-f
 .route .dest{fill:#fff}
 @keyframes dash{to{stroke-dashoffset:-56}}
 @keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
-.terms{margin-top:22px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
-.terms div{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:14px}
-.terms div:last-child{border-bottom:0}
-.terms b{color:var(--accTx);text-align:right}
 
 /* ---------- ABOUT ---------- */
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
@@ -163,14 +148,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-f
 .info div{display:flex;gap:14px;align-items:flex-start;color:var(--mut);font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .info svg{color:var(--accTx);margin-top:2px}
 .info b{display:block;color:var(--tx)}
-form.rfq{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;box-shadow:0 30px 60px -40px rgba(0,0,0,.4)}
-form.rfq label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mut)}
-form.rfq .full{grid-column:1/-1}
-form.rfq input,form.rfq select,form.rfq textarea{padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--tx);width:100%}
-form.rfq textarea{min-height:110px;resize:vertical}
-form.rfq input:focus,form.rfq select:focus,form.rfq textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
-form.rfq input.bad{border-color:#d64545}
-form.rfq .btn{grid-column:1/-1;width:100%}
+form.msg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;box-shadow:0 30px 60px -40px rgba(0,0,0,.4)}
+form.msg label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mut)}
+form.msg .full{grid-column:1/-1}
+form.msg input,form.msg select,form.msg textarea{padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--tx);width:100%}
+form.msg textarea{min-height:120px;resize:vertical}
+form.msg input:focus,form.msg select:focus,form.msg textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+form.msg input.bad{border-color:#d64545}
+form.msg .btn{grid-column:1/-1;width:100%}
 .ok{display:none;grid-column:1/-1;background:#e7f6ec;color:#17652f;border-radius:9px;padding:12px 14px;font-size:14px;font-weight:600}
 .ok.show{display:block}
 
@@ -194,19 +179,16 @@ footer a:hover{color:var(--acc)}
   .drawer.open{display:grid;gap:4px;padding:8px 16px 16px;border-top:1px solid #222831;background:var(--dark)}
   .drawer a{padding:12px 4px;border-bottom:1px solid #222831;font-weight:600;color:#fff}
   .hero-grid,.split,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
-  .steps{grid-template-columns:1fr 1fr;gap:34px 18px}
-  .steps:before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-grid > div:first-child{grid-column:1/-1}
 }
 @media (max-width:600px){
   section{padding:56px 0}
   .hero{padding-top:48px}
-  form.rfq{grid-template-columns:1fr;padding:20px}
+  form.msg{grid-template-columns:1fr;padding:20px}
   .pillars{grid-template-columns:1fr}
   .search{min-width:0;width:100%}
   .foot-grid{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important}
@@ -299,23 +281,23 @@ footer a:hover{color:var(--acc)}
       <span><b>TÜRKÖZ</b><small>YAPI MALZEMELERİ</small></span>
     </a>
     <nav class="menu" aria-label="Ana menü">
-      <a href="#urunler">Ürünler</a>
-      <a href="#surec">Süreç</a>
-      <a href="#ihracat">İhracat</a>
+      <a href="#urunler">Katalog</a>
+      <a href="#hizmetler">Neler Sunuyoruz</a>
+      <a href="#ihracat">Yurt Dışı</a>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#iletisim">İletişim</a>
     </nav>
     <div class="nav-cta">
-      <a href="#teklif" class="btn btn-acc">Teklif Al</a>
+      <a href="#iletisim" class="btn btn-acc">Bize Ulaşın</a>
       <button class="burger" aria-label="Menüyü aç" aria-expanded="false" id="burger">
         <svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
   <nav class="drawer" id="drawer" aria-label="Mobil menü">
-    <a href="#urunler">Ürünler</a>
-    <a href="#surec">Süreç</a>
-    <a href="#ihracat">İhracat</a>
+    <a href="#urunler">Katalog</a>
+    <a href="#hizmetler">Neler Sunuyoruz</a>
+    <a href="#ihracat">Yurt Dışı</a>
     <a href="#hakkimizda">Hakkımızda</a>
     <a href="#iletisim">İletişim</a>
   </nav>
@@ -327,12 +309,12 @@ footer a:hover{color:var(--acc)}
 <div class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Toptan · Proje · İhracat</span>
-      <h1>Temelden çatıya,<br><span>her malzeme</span> tek adreste.</h1>
-      <p>Türköz; kaba yapı, yalıtım, boya, zemin, tesisat ve hırdavatı inşaat firmalarına, bayilere ve projelere yurt içinde tedarik eder; yurt dışına ihracatını yönetir.</p>
+      <span class="eyebrow">Kurumsal Tanıtım · Dijital Katalog</span>
+      <h1>Temelden çatıya,<br><span>her malzeme</span> tek katalogda.</h1>
+      <p>Türköz; kaba yapı, yalıtım, boya, zemin, tesisat ve hırdavat kategorilerindeki inşaat malzemelerini ve ürün ailelerini tanıtır. Yurt içi ve yurt dışındaki iş ortaklarımız için kurumsal bilgilerimizi burada paylaşıyoruz.</p>
       <div class="hero-btns">
-        <a href="#urunler" class="btn btn-acc">Ürünleri İncele</a>
-        <a href="#teklif" class="btn btn-ghost">Proje İçin Teklif İste</a>
+        <a href="#urunler" class="btn btn-acc">Kataloğu İncele</a>
+        <a href="#iletisim" class="btn btn-ghost">Bize Ulaşın</a>
       </div>
       <div class="hero-tags">
         <span>Kaba yapı</span><span>Yalıtım</span><span>Seramik & zemin</span><span>Boya & kimyasal</span><span>Tesisat</span><span>Elektrik & hırdavat</span>
@@ -391,12 +373,12 @@ footer a:hover{color:var(--acc)}
   </div>
 </div>
 
-<!-- ÜRÜNLER -->
+<!-- KATALOG -->
 <section id="urunler">
   <div class="wrap">
     <span class="eyebrow rv">Ürün Kataloğu</span>
-    <h2 class="rv d1">Kategoriye göre bak, hızlıca teklif al</h2>
-    <p class="lead rv d2">Örnek ürün listesidir. Gerçek stok, birim fiyat ve ölçü seçenekleri için teklif formunu kullanın.</p>
+    <h2 class="rv d1">Kategorilere göz atın</h2>
+    <p class="lead rv d2">Bu katalog tanıtım amaçlıdır; fiyat ve stok bilgisi içermez. Ürünlerle ilgili detaylı bilgi için bize ulaşabilirsiniz.</p>
 
     <div class="toolbar rv">
       <div class="chips" id="chips" role="group" aria-label="Kategori filtresi"></div>
@@ -408,185 +390,135 @@ footer a:hover{color:var(--acc)}
 
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty">Aramanızla eşleşen ürün bulunamadı.</p>
-    <p class="note">Fiyatlar KDV hariç ve proje bazında değişir. Görseller temsilidir.</p>
+    <p class="note">Görseller temsilidir. Ürün özellikleri ve ambalaj bilgileri değişebilir.</p>
   </div>
 </section>
 
-<!-- SÜREÇ -->
-<section id="surec" class="alt">
+<!-- NELER SUNUYORUZ -->
+<section id="hizmetler" class="alt">
   <div class="wrap">
-    <span class="eyebrow rv">Nasıl çalışıyoruz</span>
-    <h2 class="rv d1">Talepten sahaya dört adım</h2>
-    <div class="steps" id="steps">
-      <div class="step rv">
-        <div class="dot"><span class="n">1</span>
-          <svg class="i" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg></div>
-        <h3>Talep</h3>
-        <p>Formu doldurun veya metraj listenizi gönderin.</p>
-      </div>
-      <div class="step rv d1">
-        <div class="dot"><span class="n">2</span>
-          <svg class="i" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16V10M12 16V6M16 16v-4"/></svg></div>
-        <h3>Metraj & teklif</h3>
-        <p>Satış ekibi kalemleri kontrol eder, 1 iş günü içinde teklif sunar.</p>
-      </div>
-      <div class="step rv d2">
-        <div class="dot"><span class="n">3</span>
-          <svg class="i" viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></div>
-        <h3>Sevkiyat</h3>
-        <p>Depodan hazırlanan siparişler şantiye takvimine göre yola çıkar.</p>
-      </div>
-      <div class="step rv d3">
-        <div class="dot"><span class="n">4</span>
-          <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></div>
-        <h3>Teslim</h3>
-        <p>Teslim tutanağı ve fatura, sahada eksiksiz kontrol edilerek imzalanır.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HİZMETLER -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow rv">Hizmetlerimiz</span>
-    <h2 class="rv d1">Malzemeden sahaya kadar</h2>
+    <span class="eyebrow rv">Neler sunuyoruz</span>
+    <h2 class="rv d1">Tanıtımdan sahaya kadar</h2>
     <div class="services">
       <div class="svc rv">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
-        <h3>Proje Tedariki</h3>
-        <p>Metraj listesine göre tüm malzemeleri tek sipariş ve tek teslimatla sahaya ulaştırıyoruz.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+        <h3>Dijital Katalog</h3>
+        <p>Ürün ailelerimizi kategori bazında, görsel olarak ve kolay gezilebilir biçimde sunuyoruz.</p>
       </div>
       <div class="svc rv d1">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></div>
-        <h3>Lojistik & Nakliye</h3>
-        <p>Yurt içi sevkiyat; kamyon, konteyner ve parsiyel yükleme seçenekleri.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg></div>
+        <h3>Teknik Bilgi</h3>
+        <p>Ürünlerin kullanım alanları, temel özellikleri ve uygulama notları hakkında bilgilendirme.</p>
       </div>
       <div class="svc rv d2">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
-        <h3>Toptan & Bayi Satışı</h3>
-        <p>Bayilere özel fiyat listesi, vade seçenekleri ve düzenli stok planlaması.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Proje Referansları</h3>
+        <p>Tamamlanan projelerden örnekler ve kullanılan malzeme ailelerinin tanıtımı.</p>
       </div>
       <div class="svc rv d3">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Teknik Danışmanlık</h3>
-        <p>Malzeme seçimi, yalıtım detayı ve uygunluk belgeleri konusunda destek.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Fuar & Etkinlik</h3>
+        <p>Sektörel fuar ve etkinliklerde marka ve ürün tanıtımı.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- İHRACAT -->
-<section id="ihracat" class="alt">
+<!-- YURT DIŞI -->
+<section id="ihracat">
   <div class="wrap split">
     <div>
-      <span class="eyebrow rv">Yurt Dışı Ticaret</span>
+      <span class="eyebrow rv">Yurt Dışı</span>
       <h2 class="rv d1">Türkiye'den dünyaya inşaat malzemesi</h2>
-      <p class="lead rv d2">Ülke bazlı uygunluk belgeleri, proforma fatura ve gümrük evrakı hazırlığı ile ihracat sürecini baştan sona yönetiyoruz.</p>
+      <p class="lead rv d2">Türköz'ün ürün ailelerini yurt dışındaki iş ortaklarına ve sektör profesyonellerine tanıtıyoruz.</p>
       <ul class="checks rv d2">
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Konteyner (FCL) ve parsiyel (LCL) yükleme</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>FOB, CIF ve EXW teslim koşullarında teklif</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ülkeye özel etiket, dil ve ambalaj uyarlaması</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Proforma fatura, menşe şahadetnamesi ve gümrük evrakı</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Hedef pazarlar için İngilizce ürün bilgi dokümanları</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ülkelere göre uygunluk belgesi bilgilendirmesi</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Uluslararası fuarlarda kurumsal tanıtım</li>
       </ul>
     </div>
     <div>
-      <div class="route rv d1" aria-label="Türkiye'den hedef pazarlara ihracat rotaları">
+      <div class="route rv d1" aria-label="Türkiye'den hedef bölgelere tanıtım rotaları">
         <svg viewBox="0 0 520 300" width="100%">
-          <!-- rotalar -->
-          <path id="r1" class="path" d="M90 150Q180 40 300 60"/>
-          <path id="r2" class="path" d="M90 150Q220 120 380 130"/>
-          <path id="r3" class="path" d="M90 150Q260 240 420 230"/>
-          <path id="r4" class="path" d="M90 150Q170 260 240 262"/>
-          <path id="r5" class="path" d="M90 150Q300 -10 470 40"/>
+          <path class="path" d="M90 150Q180 40 300 60"/>
+          <path class="path" d="M90 150Q220 120 380 130"/>
+          <path class="path" d="M90 150Q260 240 420 230"/>
+          <path class="path" d="M90 150Q170 260 240 262"/>
+          <path class="path" d="M90 150Q300 -10 470 40"/>
           <circle class="ring" cx="90" cy="150" r="10"/>
           <circle class="hub" cx="90" cy="150" r="9"/>
           <text x="90" y="182" text-anchor="middle">TÜRKİYE</text>
-          <!-- hedefler -->
           <circle class="dest" cx="300" cy="60" r="6"/><text x="300" y="46" text-anchor="middle">Orta Doğu</text>
           <circle class="dest" cx="380" cy="130" r="6"/><text x="380" y="118" text-anchor="middle">Kafkasya</text>
           <circle class="dest" cx="420" cy="230" r="6"/><text x="420" y="256" text-anchor="middle">Kuzey Afrika</text>
           <circle class="dest" cx="240" cy="262" r="6"/><text x="240" y="288" text-anchor="middle">Balkanlar</text>
           <circle class="dest" cx="470" cy="40" r="6"/><text x="470" y="22" text-anchor="middle">Orta Asya</text>
-          <!-- gemi/kamyon hareketi -->
           <circle class="ship" r="5"><animateMotion dur="4s" repeatCount="indefinite" path="M90 150Q180 40 300 60"/></circle>
           <circle class="ship" r="5"><animateMotion dur="5s" begin="1s" repeatCount="indefinite" path="M90 150Q260 240 420 230"/></circle>
           <circle class="ship" r="5"><animateMotion dur="4.5s" begin="2s" repeatCount="indefinite" path="M90 150Q300 -10 470 40"/></circle>
         </svg>
-      </div>
-      <div class="terms rv d2">
-        <div><span>Ödeme yöntemi</span><b>Akreditif, peşin, vadeli</b></div>
-        <div><span>Teslim koşulu</span><b>EXW · FOB · CIF</b></div>
-        <div><span>Sevkiyat sıklığı</span><b>Proje planına göre</b></div>
-        <div><span>Dil desteği</span><b>Türkçe · İngilizce</b></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HAKKIMIZDA -->
-<section id="hakkimizda">
+<section id="hakkimizda" class="alt">
   <div class="wrap about-grid">
     <div>
       <span class="eyebrow rv">Hakkımızda</span>
-      <h2 class="rv d1">Güven, stok ve zamanında teslimat</h2>
-      <p class="rv d2">Türköz, inşaat sektörünün ihtiyaç duyduğu malzemeleri tek noktadan sağlayan bir yapı malzemeleri tedarik şirketidir. Müteahhit, taşeron, bayi ve yurt dışı alıcılarla uzun vadeli ilişkiler kurmayı önceliyoruz.</p>
-      <p class="rv d3">Satış ekibimiz her projeye kendi metrajıyla yaklaşır; depo ve sevkiyat planlamasını şantiye takvimine göre yapar.</p>
+      <h2 class="rv d1">Güven, bilgi ve kalıcı marka</h2>
+      <p class="rv d2">Türköz, inşaat sektörünün ihtiyaç duyduğu malzeme ailelerini tek çatı altında tanıtan bir yapı malzemeleri şirketidir. Müteahhitler, uygulamacılar ve yurt dışındaki sektör profesyonelleriyle uzun vadeli ilişkiler kurmayı önemsiyoruz.</p>
+      <p class="rv d3">Kurumsal iletişimimizde ürün bilgisinin doğru, anlaşılır ve güncel olmasına özen gösteriyoruz.</p>
     </div>
     <div class="pillars">
-      <div class="pillar rv"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16"/></svg></div><h3>Geniş ürün yelpazesi</h3><p>Kaba yapıdan ince işçiliğe, ihtiyacın olan tüm kalemler tek tedarikçide.</p></div>
-      <div class="pillar rv d1"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6v10H3zM8 20v-6h8v6"/></svg></div><h3>Planlı stok</h3><p>Sık kullanılan ürünler sabit stokta, büyük projeler önceden rezerve.</p></div>
-      <div class="pillar rv d2"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M8 15h4"/></svg></div><h3>Şeffaf fiyat</h3><p>Teklifte birim fiyat, nakliye ve vade koşulları açıkça yazılır.</p></div>
-      <div class="pillar rv d3"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Belgeli ürün</h3><p>Ürünlerin uygunluk belgelerini talep üzerine paylaşırız.</p></div>
+      <div class="pillar rv"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16"/></svg></div><h3>Geniş kategori</h3><p>Kaba yapıdan ince işçiliğe, ihtiyacın olan tüm malzeme aileleri.</p></div>
+      <div class="pillar rv d1"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg></div><h3>Açık bilgi</h3><p>Ürün özellikleri ve kullanım alanları sade ve anlaşılır biçimde.</p></div>
+      <div class="pillar rv d2"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Güvenilir marka</h3><p>Uzun yıllara yayılan sektör deneyimini tanıtımda öne çıkarıyoruz.</p></div>
+      <div class="pillar rv d3"><div class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Küresel bakış</h3><p>Yurt içinden yurt dışına uzanan tanıtım ve iş birliği vizyonu.</p></div>
     </div>
   </div>
 </section>
 
-<!-- TEKLİF & İLETİŞİM -->
-<section id="iletisim" class="alt">
+<!-- İLETİŞİM -->
+<section id="iletisim">
   <div class="wrap contact-grid">
     <div>
       <span class="eyebrow rv">İletişim</span>
-      <h2 class="rv d1">Projenizi bize anlatın</h2>
-      <p class="lead rv d2">Metraj listenizi veya kısa bir açıklamanızı gönderin; satış ekibimiz en geç iş günü içinde dönüş yapsın.</p>
+      <h2 class="rv d1">Bize ulaşın</h2>
+      <p class="lead rv d2">Ürün bilgisi, kurumsal iş birliği, basın veya yurt dışı tanıtım konularında yazabilirsiniz.</p>
       <div class="info">
         <div class="rv"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Merkez ofis</b>Örnek Mah. Sanayi Cad. No: 12, İstanbul</span></div>
         <div class="rv d1"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><b>Telefon</b>+90 212 000 00 00</span></div>
-        <div class="rv d2"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg><span><b>E-posta</b>satis@ornek-turkoz.com</span></div>
-        <div class="rv d3"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span><b>İhracat</b>export@ornek-turkoz.com</span></div>
+        <div class="rv d2"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg><span><b>E-posta</b>info@ornek-turkoz.com</span></div>
+        <div class="rv d3"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span><b>Yurt dışı</b>international@ornek-turkoz.com</span></div>
       </div>
     </div>
 
-    <form class="rfq rv d1" id="teklif" novalidate>
+    <form class="msg rv d1" id="mesaj" novalidate>
       <label>Ad soyad *
         <input name="ad" required autocomplete="name">
       </label>
-      <label>Firma
+      <label>Kurum
         <input name="firma" autocomplete="organization">
       </label>
       <label>E-posta *
         <input name="email" type="email" required autocomplete="email">
       </label>
-      <label>Telefon
-        <input name="tel" type="tel" autocomplete="tel">
-      </label>
-      <label>Müşteri tipi
-        <select name="tip">
-          <option>Müteahhit / İnşaat firması</option>
-          <option>Taşeron</option>
-          <option>Bayi / Toptancı</option>
-          <option>Yurt dışı alıcı</option>
-          <option>Bireysel</option>
+      <label>Konu
+        <select name="konu" id="konuSel">
+          <option>Ürün bilgisi</option>
+          <option>Kurumsal iş birliği</option>
+          <option>Yurt dışı tanıtım</option>
+          <option>Basın</option>
+          <option>Diğer</option>
         </select>
       </label>
-      <label>Ürün kategorisi
-        <select name="kategori" id="kategoriSel"></select>
+      <label class="full">Mesajınız
+        <textarea name="metin" placeholder="Kısaca konuyu ve sorunuzu yazın."></textarea>
       </label>
-      <label class="full">Talep detayı
-        <textarea name="mesaj" placeholder="Ürün, miktar, teslim adresi ve hedef tarih. Metrajınız varsa ekleyin."></textarea>
-      </label>
-      <div class="ok" id="ok" role="status">Talebiniz alındı. Satış ekibimiz sizinle iletişime geçecek. (Demo: veri gönderilmez.)</div>
-      <button class="btn btn-acc" type="submit">Teklif Talebi Gönder</button>
+      <div class="ok" id="ok" role="status">Mesajınız alındı. Ekibimiz en kısa sürede dönüş yapacak. (Demo: veri gönderilmez.)</div>
+      <button class="btn btn-acc" type="submit">Mesaj Gönder</button>
     </form>
   </div>
 </section>
@@ -601,10 +533,10 @@ footer a:hover{color:var(--acc)}
           <span class="logo-mark">T</span>
           <span><b>TÜRKÖZ</b><small>YAPI MALZEMELERİ</small></span>
         </div>
-        <p style="max-width:360px">Yurt içi toptan satış ve yurt dışı ihracat için inşaat malzemesi tedarikçisi.</p>
+        <p style="max-width:360px">İnşaat malzemelerini tanıtan kurumsal dijital katalog.</p>
       </div>
       <div>
-        <h4>Ürünler</h4>
+        <h4>Katalog</h4>
         <ul>
           <li><a href="#urunler">Kaba yapı</a></li>
           <li><a href="#urunler">Yalıtım</a></li>
@@ -615,14 +547,14 @@ footer a:hover{color:var(--acc)}
       <div>
         <h4>Kurumsal</h4>
         <ul>
-          <li><a href="#surec">Süreç</a></li>
-          <li><a href="#ihracat">İhracat</a></li>
+          <li><a href="#hizmetler">Neler sunuyoruz</a></li>
+          <li><a href="#ihracat">Yurt dışı</a></li>
           <li><a href="#hakkimizda">Hakkımızda</a></li>
           <li><a href="#iletisim">İletişim</a></li>
         </ul>
       </div>
     </div>
-    <div class="copy">© 2026 Türköz Yapı Malzemeleri. Bu site bir demo çalışmasıdır; firma bilgileri, adres ve iletişim bilgileri örnektir.</div>
+    <div class="copy">© 2026 Türköz Yapı Malzemeleri. Bu site tanıtım amaçlı bir demo çalışmasıdır; firma bilgileri, adres ve iletişim bilgileri örnektir.</div>
   </div>
 </footer>
 
@@ -631,24 +563,24 @@ footer a:hover{color:var(--acc)}
   document.documentElement.classList.add("js");
 
   var PRODUCTS = [
-    {ad:"CEM I 42,5 R Çimento", kat:"Kaba yapı", birim:"50 kg torba", sku:"KY-1001", ic:"bag", c:"#8a939d"},
-    {ad:"Nervürlü İnşaat Çeliği B500C", kat:"Kaba yapı", birim:"Ton · Ø8–Ø32", sku:"KY-1002", ic:"rebar", c:"#5b6b7c"},
-    {ad:"Gazbeton Blok 60×20×30", kat:"Kaba yapı", birim:"Palet", sku:"KY-1003", ic:"block", c:"#c9bfa8"},
-    {ad:"Hazır Beton C30/37", kat:"Kaba yapı", birim:"m³", sku:"KY-1004", ic:"drum", c:"#7d8792"},
-    {ad:"Tuğla Dolu / Delikli", kat:"Kaba yapı", birim:"Adet · Palet", sku:"KY-1005", ic:"brick", c:"#c4572b"},
-    {ad:"Kendinden Yapışkanlı Membran 4 mm", kat:"Yalıtım", birim:"Rulo 10 m²", sku:"YA-2001", ic:"roll", c:"#d99e00"},
-    {ad:"XPS Isı Yalıtım Levhası 50 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2002", ic:"panel", c:"#f2b705"},
-    {ad:"Taş Yünü Cephe Levhası 100 mm", kat:"Yalıtım", birim:"m²", sku:"YA-2003", ic:"panel", c:"#e0a526"},
-    {ad:"Seramik Duvar Karosu 30×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3001", ic:"tile", c:"#4a9bb8"},
-    {ad:"Porselen Yer Karosu 60×60", kat:"Seramik & zemin", birim:"Kutu · m²", sku:"SZ-3002", ic:"tile", c:"#2f7d9c"},
-    {ad:"Alçıpan 12,5 mm", kat:"Boya & kimyasal", birim:"Levha", sku:"BK-4001", ic:"panel", c:"#b9c2cc"},
-    {ad:"Dış Cephe Su Yalıtım Boyası", kat:"Boya & kimyasal", birim:"20 kg kova", sku:"BK-4002", ic:"bucket", c:"#2e9d6a"},
-    {ad:"Çimento Esaslı Sıva 25 kg", kat:"Boya & kimyasal", birim:"Torba", sku:"BK-4003", ic:"bag", c:"#a58d6b"},
-    {ad:"PPR Boru Ø25 PN20", kat:"Tesisat", birim:"Metre · Boy", sku:"TE-5001", ic:"pipe", c:"#2e9d6a"},
-    {ad:"Kombi Bağlantı Seti", kat:"Tesisat", birim:"Takım", sku:"TE-5002", ic:"pipe", c:"#3aa6a0"},
-    {ad:"Kablo NYM 3×2,5", kat:"Elektrik & hırdavat", birim:"Metre · Makara", sku:"EH-6001", ic:"cable", c:"#d64545"},
-    {ad:"Kompozit Kapı Kasası", kat:"Elektrik & hırdavat", birim:"Adet", sku:"EH-6002", ic:"door", c:"#8b5e3c"},
-    {ad:"Vida ve Dübel Seti", kat:"Elektrik & hırdavat", birim:"Kutu", sku:"EH-6003", ic:"bolt", c:"#8a97a8"}
+    {ad:"CEM I 42,5 R Çimento", kat:"Kaba yapı", ambalaj:"50 kg torba", kod:"KY-1001", ic:"bag", c:"#8a939d"},
+    {ad:"Nervürlü İnşaat Çeliği B500C", kat:"Kaba yapı", ambalaj:"Ø8–Ø32 çap aralığı", kod:"KY-1002", ic:"rebar", c:"#5b6b7c"},
+    {ad:"Gazbeton Blok 60×20×30", kat:"Kaba yapı", ambalaj:"Blok", kod:"KY-1003", ic:"block", c:"#c9bfa8"},
+    {ad:"Hazır Beton C30/37", kat:"Kaba yapı", ambalaj:"Dökme", kod:"KY-1004", ic:"drum", c:"#7d8792"},
+    {ad:"Tuğla Dolu / Delikli", kat:"Kaba yapı", ambalaj:"Adet", kod:"KY-1005", ic:"brick", c:"#c4572b"},
+    {ad:"Kendinden Yapışkanlı Membran 4 mm", kat:"Yalıtım", ambalaj:"Rulo", kod:"YA-2001", ic:"roll", c:"#d99e00"},
+    {ad:"XPS Isı Yalıtım Levhası 50 mm", kat:"Yalıtım", ambalaj:"Levha", kod:"YA-2002", ic:"panel", c:"#f2b705"},
+    {ad:"Taş Yünü Cephe Levhası 100 mm", kat:"Yalıtım", ambalaj:"Levha", kod:"YA-2003", ic:"panel", c:"#e0a526"},
+    {ad:"Seramik Duvar Karosu 30×60", kat:"Seramik & zemin", ambalaj:"Kutu", kod:"SZ-3001", ic:"tile", c:"#4a9bb8"},
+    {ad:"Porselen Yer Karosu 60×60", kat:"Seramik & zemin", ambalaj:"Kutu", kod:"SZ-3002", ic:"tile", c:"#2f7d9c"},
+    {ad:"Alçıpan 12,5 mm", kat:"Boya & kimyasal", ambalaj:"Levha", kod:"BK-4001", ic:"panel", c:"#b9c2cc"},
+    {ad:"Dış Cephe Su Yalıtım Boyası", kat:"Boya & kimyasal", ambalaj:"20 kg kova", kod:"BK-4002", ic:"bucket", c:"#2e9d6a"},
+    {ad:"Çimento Esaslı Sıva 25 kg", kat:"Boya & kimyasal", ambalaj:"Torba", kod:"BK-4003", ic:"bag", c:"#a58d6b"},
+    {ad:"PPR Boru Ø25 PN20", kat:"Tesisat", ambalaj:"Boru", kod:"TE-5001", ic:"pipe", c:"#2e9d6a"},
+    {ad:"Kombi Bağlantı Seti", kat:"Tesisat", ambalaj:"Takım", kod:"TE-5002", ic:"pipe", c:"#3aa6a0"},
+    {ad:"Kablo NYM 3×2,5", kat:"Elektrik & hırdavat", ambalaj:"Makara", kod:"EH-6001", ic:"cable", c:"#d64545"},
+    {ad:"Kompozit Kapı Kasası", kat:"Elektrik & hırdavat", ambalaj:"Adet", kod:"EH-6002", ic:"door", c:"#8b5e3c"},
+    {ad:"Vida ve Dübel Seti", kat:"Elektrik & hırdavat", ambalaj:"Kutu", kod:"EH-6003", ic:"bolt", c:"#8a97a8"}
   ];
   var KATS = ["Tümü"].concat(PRODUCTS.map(function(p){return p.kat;}).filter(function(v,i,a){return a.indexOf(v)===i;}));
 
@@ -656,7 +588,6 @@ footer a:hover{color:var(--acc)}
   var chips = document.getElementById("chips");
   var q = document.getElementById("q");
   var empty = document.getElementById("empty");
-  var kategoriSel = document.getElementById("kategoriSel");
   var active = "Tümü";
 
   function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
@@ -679,20 +610,13 @@ footer a:hover{color:var(--acc)}
     chips.appendChild(b);
   });
 
-  KATS.slice(1).forEach(function(k){
-    var o = document.createElement("option");
-    o.textContent = k;
-    kategoriSel.appendChild(o);
-  });
-  var other = document.createElement("option");
-  other.textContent = "Diğer / Birden fazla";
-  kategoriSel.appendChild(other);
+  var konuSel = document.getElementById("konuSel");
 
   function render(){
     var term = q.value.trim().toLowerCase();
     var list = PRODUCTS.filter(function(p){
       var okKat = active === "Tümü" || p.kat === active;
-      var okQ = !term || (p.ad + " " + p.kat + " " + p.sku).toLowerCase().indexOf(term) !== -1;
+      var okQ = !term || (p.ad + " " + p.kat + " " + p.kod).toLowerCase().indexOf(term) !== -1;
       return okKat && okQ;
     });
     grid.innerHTML = list.map(function(p){
@@ -703,27 +627,14 @@ footer a:hover{color:var(--acc)}
         '</div>' +
         '<div class="body">' +
           '<h3>' + esc(p.ad) + '</h3>' +
-          '<div class="meta">Birim: ' + esc(p.birim) + '</div>' +
-          '<div class="foot"><span class="sku">' + esc(p.sku) + '</span>' +
-          '<button type="button" data-ad="' + esc(p.kat) + '" data-urun="' + esc(p.ad) + '">Teklif iste →</button></div>' +
+          '<div class="meta">Ambalaj: ' + esc(p.ambalaj) + '</div>' +
+          '<div class="foot"><span>Katalog kodu</span><span class="sku">' + esc(p.kod) + '</span></div>' +
         '</div>' +
       '</article>';
     }).join("");
     empty.style.display = list.length ? "none" : "block";
     observeNew();
   }
-
-  grid.addEventListener("click", function(e){
-    var btn = e.target.closest("button[data-urun]");
-    if(!btn) return;
-    var form = document.getElementById("teklif");
-    var mesaj = form.elements.mesaj;
-    if(kategoriSel.querySelector('option[value="' + btn.dataset.ad + '"]')) kategoriSel.value = btn.dataset.ad;
-    var ekle = btn.dataset.urun + " ürünü için teklif istiyorum. Miktar: ";
-    if(mesaj.value.indexOf(ekle) === -1) mesaj.value = ekle + (mesaj.value ? "\n" + mesaj.value : "");
-    form.scrollIntoView({behavior:"smooth", block:"center"});
-    setTimeout(function(){ form.elements.ad.focus({preventScroll:true}); }, 600);
-  });
 
   q.addEventListener("input", render);
   render();
@@ -742,14 +653,7 @@ footer a:hover{color:var(--acc)}
   }
   observeNew();
 
-  /* Süreç çizgisi ilerlemesi */
-  var stepsEl = document.getElementById("steps");
-  var stepsIo = "IntersectionObserver" in window ? new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting){ stepsEl.style.setProperty("--p","100%"); stepsIo.disconnect(); }
-  }, {threshold:.4}) : null;
-  if(stepsIo) stepsIo.observe(stepsEl); else stepsEl.style.setProperty("--p","100%");
-
-  var form = document.getElementById("teklif");
+  var form = document.getElementById("mesaj");
   form.addEventListener("submit", function(e){
     e.preventDefault();
     var ok = true;
