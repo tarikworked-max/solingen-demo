@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Türköz | İnşaat Malzemeleri Kataloğu</title>
-<meta name="description" content="Türköz: kaba yapıdan ince işçiliğe inşaat malzemelerinin dijital kataloğu. Ürünleri inceleyin, kurumsal iletişim için bize ulaşın.">
+<title>Türköz | İnşaat Malzemeleri Tanıtım</title>
+<meta name="description" content="Türköz: kaba yapıdan ince işçiliğe inşaat malzemeleri sektöründe kurumsal tanıtım. Neler sunduğumuzu öğrenin, bize ulaşın.">
 <style>
 :root{
   --ink:#16191e;--line:#e2e5ea;
@@ -65,8 +65,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-f
 .hero h1 span{color:var(--acc)}
 .hero p{font-size:18px;color:#c9d0da;max-width:560px;margin:20px 0 32px}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
-.hero-tags span{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px;font-size:13px;color:#dfe5ec;background:rgba(255,255,255,.03)}
 .scene{width:100%;height:auto}
 .scene .blk{transform-box:fill-box;transform-origin:50% 100%;animation:rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
 .scene .hook{animation:hook 5s ease-in-out infinite}
@@ -82,30 +80,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(22,25,30,.92);backdrop-f
 .marq-track{display:inline-flex;gap:40px;animation:marq 28s linear infinite;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
 .marq-track span:after{content:"✦";margin-left:40px;opacity:.6}
 @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ---------- CATALOG ---------- */
-.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:32px 0 24px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
-.chip.on,.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
-.search{position:relative;min-width:260px}
-.search input{width:100%;padding:12px 14px 12px 42px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--tx)}
-.search input:focus{outline:2px solid var(--acc);outline-offset:1px}
-.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(0,0,0,.45);border-color:var(--acc)}
-.pic{height:150px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--c) 18%,transparent),transparent 70%),var(--bg);position:relative;overflow:hidden}
-.pic svg{width:96px;height:96px;color:var(--c);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.card:hover .pic svg{transform:scale(1.12) rotate(-3deg)}
-.pic .tag{position:absolute;left:12px;top:12px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--accTx)}
-.body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
-.body h3{font-size:16px}
-.body .meta{font-size:13px;color:var(--mut)}
-.body .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--mut)}
-.body .sku{font-variant-numeric:tabular-nums;font-weight:700;color:var(--tx)}
-.empty{display:none;color:var(--mut);padding:40px 0;text-align:center}
-.note{font-size:13px;color:var(--mut);margin-top:22px}
 
 /* ---------- SERVICES ---------- */
 .alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -161,7 +135,7 @@ form.msg .btn{grid-column:1/-1;width:100%}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--dark);color:#aab3bf;padding:52px 0 28px;font-size:14px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:32px}
 footer h4{color:#fff;font-size:14px;margin-bottom:12px}
 footer ul{list-style:none;display:grid;gap:8px}
 footer a:hover{color:var(--acc)}
@@ -187,7 +161,6 @@ footer a:hover{color:var(--acc)}
   .hero{padding-top:48px}
   form.msg{grid-template-columns:1fr;padding:20px}
   .pillars{grid-template-columns:1fr}
-  .search{min-width:0;width:100%}
   .foot-grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -198,82 +171,6 @@ footer a:hover{color:var(--acc)}
 </head>
 <body>
 
-<!-- Ürün ikonları (sprite) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-bag" viewBox="0 0 64 64">
-      <path d="M16 12h32l4 8v38a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V20z" fill="currentColor"/>
-      <path d="M16 12h32l4 8H12z" fill="#fff" opacity=".35"/>
-      <rect x="20" y="30" width="24" height="14" rx="3" fill="#fff" opacity=".9"/>
-      <text x="32" y="41" text-anchor="middle" font-size="9" font-weight="800" fill="#16191e" font-family="system-ui,sans-serif">CEM</text>
-    </symbol>
-    <symbol id="i-rebar" viewBox="0 0 64 64">
-      <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
-        <line x1="6" y1="18" x2="58" y2="18"/><line x1="6" y1="30" x2="58" y2="30"/><line x1="6" y1="42" x2="58" y2="42"/><line x1="6" y1="54" x2="58" y2="54"/>
-      </g>
-      <g fill="#fff" opacity=".5"><rect x="6" y="16" width="52" height="1.5"/><rect x="6" y="28" width="52" height="1.5"/><rect x="6" y="40" width="52" height="1.5"/><rect x="6" y="52" width="52" height="1.5"/></g>
-    </symbol>
-    <symbol id="i-block" viewBox="0 0 64 64">
-      <rect x="4" y="16" width="56" height="34" rx="3" fill="currentColor"/>
-      <g fill="#fff" opacity=".55"><rect x="12" y="24" width="8" height="8" rx="1"/><rect x="24" y="24" width="8" height="8" rx="1"/><rect x="36" y="24" width="8" height="8" rx="1"/><rect x="48" y="24" width="4" height="8" rx="1"/></g>
-      <rect x="4" y="16" width="56" height="34" rx="3" fill="none" stroke="#16191e" stroke-opacity=".25" stroke-width="2"/>
-    </symbol>
-    <symbol id="i-drum" viewBox="0 0 64 64">
-      <path d="M14 22l6 34h24l6-34z" fill="currentColor"/>
-      <ellipse cx="32" cy="22" rx="18" ry="5" fill="currentColor"/>
-      <ellipse cx="32" cy="22" rx="14" ry="3" fill="#16191e" opacity=".25"/>
-      <path d="M22 34l4 16M32 32v18M42 34l-4 16" stroke="#16191e" stroke-opacity=".2" stroke-width="2"/>
-    </symbol>
-    <symbol id="i-brick" viewBox="0 0 64 64">
-      <rect x="4" y="18" width="56" height="28" rx="2" fill="currentColor"/>
-      <g stroke="#fff" stroke-opacity=".55" stroke-width="2"><line x1="22" y1="18" x2="22" y2="46"/><line x1="42" y1="18" x2="42" y2="46"/><line x1="4" y1="32" x2="60" y2="32"/></g>
-    </symbol>
-    <symbol id="i-roll" viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="26" fill="currentColor"/>
-      <circle cx="32" cy="32" r="17" fill="none" stroke="#16191e" stroke-opacity=".3" stroke-width="2.5"/>
-      <circle cx="32" cy="32" r="9" fill="none" stroke="#16191e" stroke-opacity=".3" stroke-width="2.5"/>
-      <circle cx="32" cy="32" r="4" fill="#16191e" opacity=".6"/>
-    </symbol>
-    <symbol id="i-panel" viewBox="0 0 64 64">
-      <rect x="6" y="10" width="52" height="44" rx="3" fill="currentColor"/>
-      <g stroke="#16191e" stroke-opacity=".22" stroke-width="2"><line x1="6" y1="22" x2="58" y2="22"/><line x1="6" y1="34" x2="58" y2="34"/><line x1="6" y1="46" x2="58" y2="46"/></g>
-    </symbol>
-    <symbol id="i-tile" viewBox="0 0 64 64">
-      <rect x="10" y="10" width="44" height="44" rx="4" fill="currentColor" opacity=".45"/>
-      <rect x="6" y="14" width="44" height="44" rx="4" fill="currentColor" opacity=".7"/>
-      <rect x="14" y="8" width="44" height="44" rx="4" fill="currentColor"/>
-      <path d="M14 24h44M14 38h44" stroke="#fff" stroke-opacity=".4" stroke-width="2"/>
-    </symbol>
-    <symbol id="i-bucket" viewBox="0 0 64 64">
-      <path d="M14 20h36l-4 36H18z" fill="currentColor"/>
-      <rect x="12" y="14" width="40" height="7" rx="3" fill="#16191e" opacity=".5"/>
-      <path d="M50 26c6 2 6 12 0 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-      <path d="M22 30v22" stroke="#fff" stroke-opacity=".3" stroke-width="4" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-pipe" viewBox="0 0 64 64">
-      <path d="M6 20h30a10 10 0 0 1 10 10v28" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="butt"/>
-      <rect x="2" y="16" width="10" height="12" rx="2" fill="#16191e" opacity=".5"/>
-      <path d="M6 20h30a10 10 0 0 1 10 10v28" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2" transform="translate(-2,-2)"/>
-    </symbol>
-    <symbol id="i-cable" viewBox="0 0 64 64">
-      <ellipse cx="30" cy="34" rx="24" ry="20" fill="none" stroke="currentColor" stroke-width="7"/>
-      <ellipse cx="30" cy="34" rx="12" ry="9" fill="none" stroke="currentColor" stroke-width="5" opacity=".6"/>
-      <path d="M54 34c4 0 6 4 6 8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-door" viewBox="0 0 64 64">
-      <rect x="10" y="6" width="44" height="52" rx="2" fill="currentColor"/>
-      <rect x="16" y="12" width="32" height="18" rx="2" fill="#16191e" opacity=".25"/>
-      <rect x="16" y="34" width="32" height="18" rx="2" fill="#16191e" opacity=".25"/>
-      <circle cx="46" cy="34" r="2.5" fill="#fff" opacity=".8"/>
-    </symbol>
-    <symbol id="i-bolt" viewBox="0 0 64 64">
-      <path d="M32 6l20 11.5v23L32 52 12 40.5v-23z" fill="currentColor"/>
-      <circle cx="32" cy="29" r="9" fill="#16191e" opacity=".35"/>
-      <rect x="28" y="40" width="8" height="18" rx="2" fill="currentColor" opacity=".8"/>
-    </symbol>
-  </defs>
-</svg>
-
 <header>
   <div class="wrap nav">
     <a href="#top" class="logo" aria-label="Türköz ana sayfa">
@@ -281,7 +178,6 @@ footer a:hover{color:var(--acc)}
       <span><b>TÜRKÖZ</b><small>YAPI MALZEMELERİ</small></span>
     </a>
     <nav class="menu" aria-label="Ana menü">
-      <a href="#urunler">Katalog</a>
       <a href="#hizmetler">Neler Sunuyoruz</a>
       <a href="#ihracat">Yurt Dışı</a>
       <a href="#hakkimizda">Hakkımızda</a>
@@ -295,7 +191,6 @@ footer a:hover{color:var(--acc)}
     </div>
   </div>
   <nav class="drawer" id="drawer" aria-label="Mobil menü">
-    <a href="#urunler">Katalog</a>
     <a href="#hizmetler">Neler Sunuyoruz</a>
     <a href="#ihracat">Yurt Dışı</a>
     <a href="#hakkimizda">Hakkımızda</a>
@@ -309,15 +204,12 @@ footer a:hover{color:var(--acc)}
 <div class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Kurumsal Tanıtım · Dijital Katalog</span>
-      <h1>Temelden çatıya,<br><span>her malzeme</span> tek katalogda.</h1>
-      <p>Türköz; kaba yapı, yalıtım, boya, zemin, tesisat ve hırdavat kategorilerindeki inşaat malzemelerini ve ürün ailelerini tanıtır. Yurt içi ve yurt dışındaki iş ortaklarımız için kurumsal bilgilerimizi burada paylaşıyoruz.</p>
+      <span class="eyebrow">Kurumsal Tanıtım</span>
+      <h1>Temelden çatıya,<br><span>her yapıda</span> güçlü bir ortak.</h1>
+      <p>Türköz, kaba yapıdan ince işçiliğe inşaat malzemeleri sektöründe faaliyet gösteren bir yapı malzemeleri şirketidir. Yurt içi ve yurt dışındaki iş ortaklarımıza kurumsal olarak kendimizi tanıtıyoruz.</p>
       <div class="hero-btns">
-        <a href="#urunler" class="btn btn-acc">Kataloğu İncele</a>
+        <a href="#hizmetler" class="btn btn-acc">Neler Sunuyoruz</a>
         <a href="#iletisim" class="btn btn-ghost">Bize Ulaşın</a>
-      </div>
-      <div class="hero-tags">
-        <span>Kaba yapı</span><span>Yalıtım</span><span>Seramik & zemin</span><span>Boya & kimyasal</span><span>Tesisat</span><span>Elektrik & hırdavat</span>
       </div>
     </div>
 
@@ -373,66 +265,45 @@ footer a:hover{color:var(--acc)}
   </div>
 </div>
 
-<!-- KATALOG -->
-<section id="urunler">
-  <div class="wrap">
-    <span class="eyebrow rv">Ürün Kataloğu</span>
-    <h2 class="rv d1">Kategorilere göz atın</h2>
-    <p class="lead rv d2">Bu katalog tanıtım amaçlıdır; fiyat ve stok bilgisi içermez. Ürünlerle ilgili detaylı bilgi için bize ulaşabilirsiniz.</p>
-
-    <div class="toolbar rv">
-      <div class="chips" id="chips" role="group" aria-label="Kategori filtresi"></div>
-      <label class="search">
-        <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        <input type="search" id="q" placeholder="Ürün ara (ör. çimento, membran)" aria-label="Ürün ara">
-      </label>
-    </div>
-
-    <div class="grid" id="grid"></div>
-    <p class="empty" id="empty">Aramanızla eşleşen ürün bulunamadı.</p>
-    <p class="note">Görseller temsilidir. Ürün özellikleri ve ambalaj bilgileri değişebilir.</p>
-  </div>
-</section>
-
 <!-- NELER SUNUYORUZ -->
-<section id="hizmetler" class="alt">
+<section id="hizmetler">
   <div class="wrap">
     <span class="eyebrow rv">Neler sunuyoruz</span>
-    <h2 class="rv d1">Tanıtımdan sahaya kadar</h2>
+    <h2 class="rv d1">Yapının her aşamasında yanınızdayız</h2>
     <div class="services">
       <div class="svc rv">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
-        <h3>Dijital Katalog</h3>
-        <p>Ürün ailelerimizi kategori bazında, görsel olarak ve kolay gezilebilir biçimde sunuyoruz.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Kaba Yapı</h3>
+        <p>Temel ve taşıyıcı sistem için geniş malzeme yelpazesiyle sektörün ihtiyaçlarına katkı sağlıyoruz.</p>
       </div>
       <div class="svc rv d1">
         <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg></div>
-        <h3>Teknik Bilgi</h3>
-        <p>Ürünlerin kullanım alanları, temel özellikleri ve uygulama notları hakkında bilgilendirme.</p>
+        <h3>İnce İşçilik</h3>
+        <p>Yalıtım, boya, seramik ve tesisat alanlarında uygulamacılara bilgi ve destek sunuyoruz.</p>
       </div>
       <div class="svc rv d2">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
-        <h3>Proje Referansları</h3>
-        <p>Tamamlanan projelerden örnekler ve kullanılan malzeme ailelerinin tanıtımı.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+        <h3>Teknik Bilgilendirme</h3>
+        <p>Malzemelerin kullanım alanları ve temel özellikleri hakkında anlaşılır kurumsal bilgilendirme.</p>
       </div>
       <div class="svc rv d3">
-        <div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-        <h3>Fuar & Etkinlik</h3>
-        <p>Sektörel fuar ve etkinliklerde marka ve ürün tanıtımı.</p>
+        <div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Sektörel Etkinlikler</h3>
+        <p>Fuar ve sektör buluşmalarında marka ve çalışmalarımızı tanıtıyoruz.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- YURT DIŞI -->
-<section id="ihracat">
+<section id="ihracat" class="alt">
   <div class="wrap split">
     <div>
       <span class="eyebrow rv">Yurt Dışı</span>
       <h2 class="rv d1">Türkiye'den dünyaya inşaat malzemesi</h2>
-      <p class="lead rv d2">Türköz'ün ürün ailelerini yurt dışındaki iş ortaklarına ve sektör profesyonellerine tanıtıyoruz.</p>
+      <p class="lead rv d2">Türköz'ü yurt dışındaki iş ortaklarına ve sektör profesyonellerine tanıtıyoruz.</p>
       <ul class="checks rv d2">
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Hedef pazarlar için İngilizce ürün bilgi dokümanları</li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>İngilizce kurumsal tanıtım materyalleri</li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ülkelere göre uygunluk belgesi bilgilendirmesi</li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Uluslararası fuarlarda kurumsal tanıtım</li>
       </ul>
@@ -463,30 +334,30 @@ footer a:hover{color:var(--acc)}
 </section>
 
 <!-- HAKKIMIZDA -->
-<section id="hakkimizda" class="alt">
+<section id="hakkimizda">
   <div class="wrap about-grid">
     <div>
       <span class="eyebrow rv">Hakkımızda</span>
       <h2 class="rv d1">Güven, bilgi ve kalıcı marka</h2>
-      <p class="rv d2">Türköz, inşaat sektörünün ihtiyaç duyduğu malzeme ailelerini tek çatı altında tanıtan bir yapı malzemeleri şirketidir. Müteahhitler, uygulamacılar ve yurt dışındaki sektör profesyonelleriyle uzun vadeli ilişkiler kurmayı önemsiyoruz.</p>
-      <p class="rv d3">Kurumsal iletişimimizde ürün bilgisinin doğru, anlaşılır ve güncel olmasına özen gösteriyoruz.</p>
+      <p class="rv d2">Türköz, inşaat sektörünün ihtiyaç duyduğu malzemeleri tanıtan bir yapı malzemeleri şirketidir. Müteahhitler, uygulamacılar ve yurt dışındaki sektör profesyonelleriyle uzun vadeli ilişkiler kurmayı önemsiyoruz.</p>
+      <p class="rv d3">Kurumsal iletişimimizde bilginin doğru, anlaşılır ve güncel olmasına özen gösteriyoruz.</p>
     </div>
     <div class="pillars">
-      <div class="pillar rv"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16"/></svg></div><h3>Geniş kategori</h3><p>Kaba yapıdan ince işçiliğe, ihtiyacın olan tüm malzeme aileleri.</p></div>
-      <div class="pillar rv d1"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg></div><h3>Açık bilgi</h3><p>Ürün özellikleri ve kullanım alanları sade ve anlaşılır biçimde.</p></div>
-      <div class="pillar rv d2"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Güvenilir marka</h3><p>Uzun yıllara yayılan sektör deneyimini tanıtımda öne çıkarıyoruz.</p></div>
+      <div class="pillar rv"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16"/></svg></div><h3>Geniş kapsam</h3><p>Kaba yapıdan ince işçiliğe, sektörün ihtiyaç duyduğu tüm alanlar.</p></div>
+      <div class="pillar rv d1"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg></div><h3>Açık bilgi</h3><p>Malzemeler ve kullanım alanları sade ve anlaşılır biçimde.</p></div>
+      <div class="pillar rv d2"><div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Güvenilir marka</h3><p>Sektör deneyimimizi güven üzerine kuruyoruz.</p></div>
       <div class="pillar rv d3"><div class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Küresel bakış</h3><p>Yurt içinden yurt dışına uzanan tanıtım ve iş birliği vizyonu.</p></div>
     </div>
   </div>
 </section>
 
 <!-- İLETİŞİM -->
-<section id="iletisim">
+<section id="iletisim" class="alt">
   <div class="wrap contact-grid">
     <div>
       <span class="eyebrow rv">İletişim</span>
       <h2 class="rv d1">Bize ulaşın</h2>
-      <p class="lead rv d2">Ürün bilgisi, kurumsal iş birliği, basın veya yurt dışı tanıtım konularında yazabilirsiniz.</p>
+      <p class="lead rv d2">Kurumsal iş birliği, basın, yurt dışı tanıtım veya genel bilgi talepleriniz için yazabilirsiniz.</p>
       <div class="info">
         <div class="rv"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Merkez ofis</b>Örnek Mah. Sanayi Cad. No: 12, İstanbul</span></div>
         <div class="rv d1"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><b>Telefon</b>+90 212 000 00 00</span></div>
@@ -506,8 +377,8 @@ footer a:hover{color:var(--acc)}
         <input name="email" type="email" required autocomplete="email">
       </label>
       <label>Konu
-        <select name="konu" id="konuSel">
-          <option>Ürün bilgisi</option>
+        <select name="konu">
+          <option>Genel bilgi</option>
           <option>Kurumsal iş birliği</option>
           <option>Yurt dışı tanıtım</option>
           <option>Basın</option>
@@ -533,16 +404,7 @@ footer a:hover{color:var(--acc)}
           <span class="logo-mark">T</span>
           <span><b>TÜRKÖZ</b><small>YAPI MALZEMELERİ</small></span>
         </div>
-        <p style="max-width:360px">İnşaat malzemelerini tanıtan kurumsal dijital katalog.</p>
-      </div>
-      <div>
-        <h4>Katalog</h4>
-        <ul>
-          <li><a href="#urunler">Kaba yapı</a></li>
-          <li><a href="#urunler">Yalıtım</a></li>
-          <li><a href="#urunler">Seramik & zemin</a></li>
-          <li><a href="#urunler">Tesisat</a></li>
-        </ul>
+        <p style="max-width:360px">İnşaat malzemeleri sektöründe kurumsal tanıtım sayfası.</p>
       </div>
       <div>
         <h4>Kurumsal</h4>
@@ -562,83 +424,6 @@ footer a:hover{color:var(--acc)}
 (function(){
   document.documentElement.classList.add("js");
 
-  var PRODUCTS = [
-    {ad:"CEM I 42,5 R Çimento", kat:"Kaba yapı", ambalaj:"50 kg torba", kod:"KY-1001", ic:"bag", c:"#8a939d"},
-    {ad:"Nervürlü İnşaat Çeliği B500C", kat:"Kaba yapı", ambalaj:"Ø8–Ø32 çap aralığı", kod:"KY-1002", ic:"rebar", c:"#5b6b7c"},
-    {ad:"Gazbeton Blok 60×20×30", kat:"Kaba yapı", ambalaj:"Blok", kod:"KY-1003", ic:"block", c:"#c9bfa8"},
-    {ad:"Hazır Beton C30/37", kat:"Kaba yapı", ambalaj:"Dökme", kod:"KY-1004", ic:"drum", c:"#7d8792"},
-    {ad:"Tuğla Dolu / Delikli", kat:"Kaba yapı", ambalaj:"Adet", kod:"KY-1005", ic:"brick", c:"#c4572b"},
-    {ad:"Kendinden Yapışkanlı Membran 4 mm", kat:"Yalıtım", ambalaj:"Rulo", kod:"YA-2001", ic:"roll", c:"#d99e00"},
-    {ad:"XPS Isı Yalıtım Levhası 50 mm", kat:"Yalıtım", ambalaj:"Levha", kod:"YA-2002", ic:"panel", c:"#f2b705"},
-    {ad:"Taş Yünü Cephe Levhası 100 mm", kat:"Yalıtım", ambalaj:"Levha", kod:"YA-2003", ic:"panel", c:"#e0a526"},
-    {ad:"Seramik Duvar Karosu 30×60", kat:"Seramik & zemin", ambalaj:"Kutu", kod:"SZ-3001", ic:"tile", c:"#4a9bb8"},
-    {ad:"Porselen Yer Karosu 60×60", kat:"Seramik & zemin", ambalaj:"Kutu", kod:"SZ-3002", ic:"tile", c:"#2f7d9c"},
-    {ad:"Alçıpan 12,5 mm", kat:"Boya & kimyasal", ambalaj:"Levha", kod:"BK-4001", ic:"panel", c:"#b9c2cc"},
-    {ad:"Dış Cephe Su Yalıtım Boyası", kat:"Boya & kimyasal", ambalaj:"20 kg kova", kod:"BK-4002", ic:"bucket", c:"#2e9d6a"},
-    {ad:"Çimento Esaslı Sıva 25 kg", kat:"Boya & kimyasal", ambalaj:"Torba", kod:"BK-4003", ic:"bag", c:"#a58d6b"},
-    {ad:"PPR Boru Ø25 PN20", kat:"Tesisat", ambalaj:"Boru", kod:"TE-5001", ic:"pipe", c:"#2e9d6a"},
-    {ad:"Kombi Bağlantı Seti", kat:"Tesisat", ambalaj:"Takım", kod:"TE-5002", ic:"pipe", c:"#3aa6a0"},
-    {ad:"Kablo NYM 3×2,5", kat:"Elektrik & hırdavat", ambalaj:"Makara", kod:"EH-6001", ic:"cable", c:"#d64545"},
-    {ad:"Kompozit Kapı Kasası", kat:"Elektrik & hırdavat", ambalaj:"Adet", kod:"EH-6002", ic:"door", c:"#8b5e3c"},
-    {ad:"Vida ve Dübel Seti", kat:"Elektrik & hırdavat", ambalaj:"Kutu", kod:"EH-6003", ic:"bolt", c:"#8a97a8"}
-  ];
-  var KATS = ["Tümü"].concat(PRODUCTS.map(function(p){return p.kat;}).filter(function(v,i,a){return a.indexOf(v)===i;}));
-
-  var grid = document.getElementById("grid");
-  var chips = document.getElementById("chips");
-  var q = document.getElementById("q");
-  var empty = document.getElementById("empty");
-  var active = "Tümü";
-
-  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
-
-  KATS.forEach(function(k){
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "chip" + (k === active ? " on" : "");
-    b.textContent = k;
-    b.setAttribute("aria-pressed", k === active ? "true" : "false");
-    b.addEventListener("click", function(){
-      active = k;
-      Array.prototype.forEach.call(chips.children, function(c){
-        var on = c.textContent === active;
-        c.classList.toggle("on", on);
-        c.setAttribute("aria-pressed", on ? "true" : "false");
-      });
-      render();
-    });
-    chips.appendChild(b);
-  });
-
-  var konuSel = document.getElementById("konuSel");
-
-  function render(){
-    var term = q.value.trim().toLowerCase();
-    var list = PRODUCTS.filter(function(p){
-      var okKat = active === "Tümü" || p.kat === active;
-      var okQ = !term || (p.ad + " " + p.kat + " " + p.kod).toLowerCase().indexOf(term) !== -1;
-      return okKat && okQ;
-    });
-    grid.innerHTML = list.map(function(p){
-      return '<article class="card">' +
-        '<div class="pic" style="--c:' + p.c + '">' +
-          '<span class="tag">' + esc(p.kat) + '</span>' +
-          '<svg aria-hidden="true"><use href="#i-' + p.ic + '"/></svg>' +
-        '</div>' +
-        '<div class="body">' +
-          '<h3>' + esc(p.ad) + '</h3>' +
-          '<div class="meta">Ambalaj: ' + esc(p.ambalaj) + '</div>' +
-          '<div class="foot"><span>Katalog kodu</span><span class="sku">' + esc(p.kod) + '</span></div>' +
-        '</div>' +
-      '</article>';
-    }).join("");
-    empty.style.display = list.length ? "none" : "block";
-    observeNew();
-  }
-
-  q.addEventListener("input", render);
-  render();
-
   /* Ekrana girince öğeleri canlandır */
   var io = "IntersectionObserver" in window ? new IntersectionObserver(function(entries){
     entries.forEach(function(en){
@@ -646,12 +431,9 @@ footer a:hover{color:var(--acc)}
     });
   }, {threshold:.12, rootMargin:"0px 0px -40px 0px"}) : null;
 
-  function observeNew(){
-    document.querySelectorAll(".rv:not(.in)").forEach(function(el){
-      if(io) io.observe(el); else el.classList.add("in");
-    });
-  }
-  observeNew();
+  document.querySelectorAll(".rv").forEach(function(el){
+    if(io) io.observe(el); else el.classList.add("in");
+  });
 
   var form = document.getElementById("mesaj");
   form.addEventListener("submit", function(e){
